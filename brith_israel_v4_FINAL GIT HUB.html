@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rite Brith Israël® — L'Alliance d'Israël | Rite Maçonnique Kabbalistique</title>
+<meta name="description" content="Le Rite Brith Israël® est un rite maçonnique déiste de tradition hébraïque et kabbalistique, fondé par Mickaël DARMON. 33 degrés, ouvert à tous les croyants.">
+<meta property="og:title" content="Rite Brith Israël® — L'Alliance d'Israël">
+<meta property="og:description" content="Rite Maçonnique Kabbalistique — 33 degrés — Ouvert à tous les croyants">
+<meta property="og:image" content="https://static.wixstatic.com/media/73e6ef_d04fc4ad5e554c08880a37a7a3b580e9~mv2.png">
+<meta property="og:url" content="https://www.brith-israel.org">
+<link rel="canonical" href="https://www.brith-israel.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#D4AF37;--gold-light:#e8d07a;--gold-dark:#b8962e;
+  --midnight:#080C18;--deep-blue:#0A0F1E;--parchment:#F5F0E8;
+  --silver:#A8A8B8;--sidebar-w:255px;--tr:.22s ease;
+  --font-title:'Cinzel',serif;--font-body:'Cormorant Garamond',serif;
+  --font-heb:'Frank Ruhl Libre',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:var(--midnight);color:var(--parchment);font-family:var(--font-body)}
+
+/* BG */
+.bg-stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle var(--d,5s) var(--dl,0s) infinite alternate;opacity:var(--op,.4)}
+@keyframes twinkle{0%{opacity:.05}100%{opacity:var(--op,.7)}}
+.bg-logo{position:fixed;top:50%;left:calc(var(--sidebar-w) + 50%);transform:translate(-50%,-50%);width:340px;height:340px;background:url('https://static.wixstatic.com/media/73e6ef_affcab322f9346e5bb5768c41a3cfad6~mv2.png') center/contain no-repeat;opacity:.025;pointer-events:none;z-index:0}
+
+/* APP LAYOUT */
+.app{display:flex;height:100vh;position:relative;z-index:1}
+
+/* SIDEBAR */
+.sidebar{width:var(--sidebar-w);height:100vh;background:linear-gradient(180deg,rgba(6,9,18,.98) 0%,rgba(8,14,28,.97) 100%);border-right:1px solid rgba(212,175,55,.13);display:flex;flex-direction:column;flex-shrink:0;overflow:hidden;transition:transform .32s ease;z-index:100}
+.sb-brand{padding:20px 16px 14px;text-align:center;border-bottom:1px solid rgba(212,175,55,.1);cursor:pointer;transition:opacity var(--tr)}
+.sb-brand:hover{opacity:.85}
+.sb-brand-logo{width:72px;height:72px;object-fit:contain;margin-bottom:6px;filter:drop-shadow(0 0 10px rgba(212,175,55,.3))}
+.sb-heb{font-family:var(--font-heb);font-size:1.1rem;color:var(--gold);letter-spacing:.04em;margin-bottom:2px}
+.sb-title{font-family:var(--font-title);font-size:.7rem;letter-spacing:.14em;color:var(--parchment);text-transform:uppercase}
+.lang-bar{display:flex;justify-content:center;gap:5px;padding:9px 12px;border-bottom:1px solid rgba(212,175,55,.07)}
+.lang-btn{background:none;border:1px solid rgba(212,175,55,.18);color:var(--silver);font-family:var(--font-title);font-size:.6rem;letter-spacing:.08em;padding:3px 8px;border-radius:3px;cursor:pointer;transition:all var(--tr)}
+.lang-btn.active,.lang-btn:hover{background:var(--gold);color:var(--midnight);border-color:var(--gold)}
+.nav-scroll{flex:1;overflow-y:auto;padding:7px 0 14px}
+.nav-scroll::-webkit-scrollbar{width:3px}
+.nav-scroll::-webkit-scrollbar-thumb{background:rgba(212,175,55,.2);border-radius:2px}
+.nav-sec{font-family:var(--font-title);font-size:.52rem;letter-spacing:.17em;color:rgba(212,175,55,.38);text-transform:uppercase;padding:10px 16px 3px}
+.nav-item{display:flex;align-items:center;gap:9px;padding:8px 16px;cursor:pointer;border-left:2px solid transparent;transition:all var(--tr);border-radius:0 5px 5px 0;margin:1px 6px 1px 0}
+.nav-item:hover{background:rgba(212,175,55,.06);border-left-color:rgba(212,175,55,.35);color:var(--gold)}
+.nav-item.active{background:rgba(212,175,55,.1);border-left-color:var(--gold);color:var(--gold)}
+.nav-ico{font-size:.88rem;width:18px;text-align:center;flex-shrink:0}
+.nav-label{font-family:var(--font-body);font-size:.84rem;letter-spacing:.02em}
+.sb-footer{padding:10px 14px;text-align:center;border-top:1px solid rgba(212,175,55,.07)}
+.sb-footer a{font-size:.62rem;color:rgba(212,175,55,.35);text-decoration:none;font-family:var(--font-title);letter-spacing:.06em}
+
+/* MAIN */
+.main-wrap{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.topbar{display:none;align-items:center;justify-content:space-between;padding:9px 14px;background:rgba(6,9,18,.96);border-bottom:1px solid rgba(212,175,55,.1);z-index:50;flex-shrink:0}
+.tb-left{display:flex;align-items:center;gap:9px}
+.tb-logo{height:32px;width:32px;object-fit:contain}
+.tb-title{font-family:var(--font-title);font-size:.72rem;letter-spacing:.12em;color:var(--gold)}
+.burger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:4px}
+.burger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:1px;transition:all var(--tr)}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.breadcrumb{padding:6px 20px;background:rgba(6,9,18,.7);border-bottom:1px solid rgba(212,175,55,.06);font-size:.7rem;display:flex;align-items:center;gap:5px;flex-shrink:0}
+.bc{color:rgba(212,175,55,.38);font-family:var(--font-title);font-size:.62rem;letter-spacing:.07em}
+.bc-sep{color:rgba(212,175,55,.22)}
+.bc.cur{color:var(--gold-light)}
+.content-wrap{flex:1;overflow:hidden;position:relative}
+
+/* TABS */
+.tab-pane{display:none;height:100%;overflow-y:auto;scroll-behavior:smooth}
+.tab-pane::-webkit-scrollbar{width:4px}
+.tab-pane::-webkit-scrollbar-thumb{background:rgba(212,175,55,.18);border-radius:2px}
+.tab-pane.active{display:block}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.tab-pane.active{animation:fadeSlide .28s ease}
+
+/* SCROLL TOP */
+.scroll-top{position:fixed;bottom:68px;right:16px;width:36px;height:36px;background:rgba(212,175,55,.18);border:1px solid rgba(212,175,55,.35);color:var(--gold);border-radius:50%;font-size:1rem;cursor:pointer;z-index:90;display:none;align-items:center;justify-content:center;transition:all var(--tr)}
+.scroll-top.vis{display:flex}
+.scroll-top:hover{background:var(--gold);color:var(--midnight)}
+
+/* MUSIC BAR */
+.music-bar{position:sticky;bottom:0;left:0;right:0;display:flex;align-items:center;gap:8px;background:rgba(6,9,18,.97);border-top:1px solid rgba(212,175,55,.12);padding:6px 14px;z-index:80;flex-shrink:0}
+.music-lbl{font-family:var(--font-heb);font-size:.85rem;color:var(--gold);white-space:nowrap}
+.music-x{color:rgba(212,175,55,.4);cursor:pointer;font-size:1.1rem;flex-shrink:0;line-height:1;transition:color var(--tr)}
+.music-x:hover{color:var(--gold)}
+
+/* HERO */
+.page-hero{text-align:center;padding:26px 20px 18px;background:linear-gradient(180deg,rgba(212,175,55,.05) 0%,transparent 100%);border-bottom:1px solid rgba(212,175,55,.08);position:relative}
+.page-heb{font-family:var(--font-heb);font-size:1.6rem;color:rgba(212,175,55,.32);margin-bottom:4px;letter-spacing:.04em}
+.page-title{font-family:var(--font-title);font-size:1.35rem;letter-spacing:.14em;text-transform:uppercase;color:var(--parchment)}
+
+/* CONTENT */
+.sec-block{padding:20px 22px 28px;max-width:880px}
+.prose{font-size:.95rem;line-height:1.75;color:var(--parchment);margin-bottom:13px}
+.qblock{border-left:2px solid var(--gold);padding:10px 16px;margin:14px 0;font-style:italic;color:var(--gold-light);font-size:.92rem;background:rgba(212,175,55,.04);border-radius:0 6px 6px 0}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.18),transparent);margin:18px 0}
+
+/* CARDS */
+.cgrid{display:grid;gap:11px;margin:13px 0}
+.cgrid.c2{grid-template-columns:repeat(2,1fr)}
+.cgrid.c3{grid-template-columns:repeat(3,1fr)}
+.card{background:rgba(15,22,37,.7);border:1px solid rgba(212,175,55,.1);border-radius:8px;padding:14px;transition:all var(--tr)}
+.card:hover{border-color:rgba(212,175,55,.25);transform:translateY(-2px)}
+.card.hl{border-color:rgba(212,175,55,.22);background:rgba(212,175,55,.04)}
+.ctitle{font-family:var(--font-title);font-size:.72rem;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.cbody{font-size:.86rem;line-height:1.62;color:var(--parchment)}
+
+/* ALERTS */
+.alert{border-radius:7px;padding:11px 14px;margin:11px 0;font-size:.84rem;line-height:1.55}
+.alert h4{font-family:var(--font-title);font-size:.72rem;letter-spacing:.06em;margin-bottom:5px}
+.a-gold{background:rgba(212,175,55,.07);border:1px solid rgba(212,175,55,.22);color:var(--parchment)}
+.a-gold h4{color:var(--gold)}
+.a-green{background:rgba(39,174,96,.07);border:1px solid rgba(39,174,96,.25);color:#7fc99a}
+.a-red{background:rgba(231,76,60,.07);border:1px solid rgba(231,76,60,.2);color:#f0857a}
+
+/* BTNS */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 22px;border-radius:5px;font-family:var(--font-title);font-size:.72rem;letter-spacing:.1em;text-decoration:none;cursor:pointer;transition:all var(--tr);border:none;gap:6px}
+.btn-g{background:var(--gold);color:var(--midnight)}
+.btn-g:hover{background:var(--gold-light);box-shadow:0 4px 16px rgba(212,175,55,.3)}
+.btn-o{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.btn-o:hover{background:rgba(212,175,55,.1)}
+
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;align-items:center;justify-content:center;flex-direction:column;backdrop-filter:blur(6px)}
+.lb.on{display:flex}
+.lb img{max-width:88vw;max-height:80vh;object-fit:contain;border:1px solid rgba(212,175,55,.3);border-radius:6px;box-shadow:0 0 60px rgba(0,0,0,.8)}
+.lb-cap{margin-top:12px;font-family:var(--font-title);font-size:.72rem;color:var(--gold);letter-spacing:.1em;text-align:center;max-width:500px}
+.lb-x{position:fixed;top:18px;right:22px;font-size:2rem;color:var(--gold);cursor:pointer;line-height:1;z-index:1001}
+.lb-x:hover{color:#fff}
+.lb-nav{position:fixed;top:50%;transform:translateY(-50%);font-size:2.2rem;color:var(--gold);cursor:pointer;z-index:1001;padding:0 8px;user-select:none;transition:color var(--tr)}
+.lb-nav:hover{color:#fff}
+.lb-p{left:6px}.lb-n{right:6px}
+
+/* TUILAGE */
+.tbox{background:rgba(15,22,37,.8);border:1px solid rgba(212,175,55,.26);border-radius:11px;padding:20px;max-width:440px;margin:0 auto}
+.tbox h3{font-family:var(--font-title);color:var(--gold);text-align:center;margin-bottom:14px;font-size:.93rem;letter-spacing:.07em}
+.tq{margin-bottom:12px}
+.tq label{display:block;font-size:.73rem;color:var(--gold);margin-bottom:4px;font-family:var(--font-title);letter-spacing:.05em}
+.tq input{width:100%;padding:9px 12px;font-family:var(--font-body);font-size:.95rem;color:var(--parchment);background:rgba(8,12,24,.8);border:1px solid rgba(212,175,55,.2);border-radius:5px;transition:border-color var(--tr);outline:none}
+.tq input:focus{border-color:var(--gold)}
+.tsub{width:100%;padding:10px;font-family:var(--font-title);font-size:.76rem;letter-spacing:.09em;color:var(--midnight);background:var(--gold);border:none;border-radius:5px;cursor:pointer;transition:all var(--tr)}
+.tsub:hover{background:var(--gold-dark)}
+.t-err{display:none;margin-top:10px;padding:8px;background:rgba(231,76,60,.12);border:1px solid rgba(231,76,60,.35);color:#f0857a;text-align:center;font-size:.8rem;border-radius:5px}
+.t-err.show{display:block}
+.fm-c{display:none}.fm-c.show{display:block}
+.cbox{background:rgba(15,22,37,.8);border:1px solid var(--gold);border-radius:11px;padding:22px;text-align:center;max-width:370px;margin:18px auto}
+.cbox h3{font-family:var(--font-title);color:var(--gold);font-size:.97rem;margin-bottom:6px}
+
+/* SAUTOIRS */
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:10px;margin:13px 0}
+.si{text-align:center;background:rgba(15,22,37,.5);border:1px solid rgba(212,175,55,.16);border-radius:8px;padding:8px;cursor:pointer;transition:all var(--tr)}
+.si:hover{transform:scale(1.04);box-shadow:0 5px 16px rgba(212,175,55,.2);border-color:var(--gold)}
+.si img{width:100%;max-height:145px;object-fit:contain;border-radius:4px}
+.si-lbl{font-family:var(--font-title);font-size:.66rem;color:var(--gold);font-weight:700;margin-top:5px}
+.si-sub{font-size:.6rem;color:var(--gold-light)}
+.si.sp{border-color:rgba(212,175,55,.4);box-shadow:0 0 12px rgba(212,175,55,.07)}
+
+/* SOURCES */
+.src-ul{list-style:none;margin-top:7px}
+.src-ul li{padding:3px 0;font-size:.83rem;color:var(--parchment);opacity:.88;border-bottom:1px solid rgba(212,175,55,.05);line-height:1.4}
+.src-ul li::before{content:'◈ ';color:var(--gold);font-size:.66rem}
+
+/* MEMBRES */
+.mr{display:flex;gap:20px;align-items:flex-start;padding:17px;background:rgba(15,22,37,.5);border:1px solid rgba(212,175,55,.1);border-radius:9px;margin-bottom:13px}
+.mr.rev{flex-direction:row-reverse}
+.mr img{width:145px;max-height:205px;object-fit:contain;border:2px solid rgba(212,175,55,.36);border-radius:5px;flex-shrink:0;cursor:pointer;transition:transform var(--tr)}
+.mr img:hover{transform:scale(1.03)}
+.mr-info h3{font-family:var(--font-title);font-size:.93rem;color:var(--gold);margin-bottom:4px}
+.mr-info .role{font-size:.83rem;color:var(--gold-light);margin-bottom:3px}
+.mr-info .name{font-size:.97rem;color:var(--parchment);font-weight:500;margin-bottom:2px}
+.mr-info .grade{font-size:.8rem;color:var(--silver);font-style:italic}
+
+/* SUPRÊME CONSEIL */
+.sc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.sc-card{background:rgba(15,22,37,.7);border:1px solid rgba(212,175,55,.12);border-radius:9px;padding:15px;text-align:center;transition:all var(--tr)}
+.sc-card:hover{border-color:rgba(212,175,55,.3);transform:translateY(-2px)}
+.sc-card img{width:105px;max-height:145px;object-fit:contain;border:2px solid rgba(212,175,55,.36);border-radius:5px;margin-bottom:8px;cursor:pointer}
+.sc-card h4{font-family:var(--font-title);font-size:.63rem;color:var(--gold);margin-bottom:4px;letter-spacing:.05em;line-height:1.4}
+.sc-name{font-size:.88rem;color:var(--parchment);font-weight:500;margin-bottom:2px}
+.sc-role{font-size:.76rem;color:var(--silver);font-style:italic}
+.sc-stitle{font-family:var(--font-title);font-size:.7rem;color:var(--gold);text-align:center;letter-spacing:.11em;text-transform:uppercase;padding:13px 0 8px;border-bottom:1px solid rgba(212,175,55,.12);margin-bottom:12px}
+
+/* TABLE */
+.tw{overflow-x:auto;margin:12px 0;border-radius:8px;border:1px solid rgba(212,175,55,.12)}
+table.ct{width:100%;border-collapse:collapse;font-size:.75rem}
+table.ct th{background:rgba(212,175,55,.12);color:var(--gold);padding:8px 6px;text-align:center;font-family:var(--font-title);font-size:.66rem;letter-spacing:.05em;white-space:nowrap}
+table.ct td{padding:7px 6px;border:1px solid rgba(212,175,55,.08);vertical-align:top;color:var(--parchment)}
+table.ct tr:nth-child(even) td{background:rgba(15,22,37,.4)}
+table.ct tr:hover td{background:rgba(212,175,55,.05)}
+table.ct .bi{border-left:2px solid var(--gold)!important;background:rgba(212,175,55,.06)}
+table.ct .gn{color:var(--gold);font-weight:700;text-align:center;width:28px}
+.myt{font-style:italic;color:var(--gold-light);font-size:.68rem}
+
+/* SYMBOLES */
+.sym-row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:12px 0}
+.sym-it{text-align:center;padding:8px 4px;background:rgba(15,22,37,.55);border:1px solid rgba(212,175,55,.12);border-radius:8px;transition:all var(--tr);cursor:pointer}
+.sym-it:hover{border-color:var(--gold);transform:scale(1.05)}
+.sym-ico{width:44px;height:44px;border-radius:50%;border:2px solid rgba(212,175,55,.32);display:flex;align-items:center;justify-content:center;margin:0 auto 4px;background:var(--deep-blue);overflow:hidden}
+.sym-ico img{width:65%;height:65%;object-fit:contain}
+.sym-n{font-family:var(--font-title);font-size:.54rem;color:var(--gold)}
+.sym-h{font-family:var(--font-heb);font-size:.72rem;color:var(--gold-light)}
+
+/* FM DOCS */
+.fm-doc{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(15,22,37,.6);border:1px solid rgba(212,175,55,.12);border-radius:8px;margin-bottom:8px;transition:all var(--tr)}
+.fm-doc:hover{border-color:rgba(212,175,55,.26)}
+.fm-doc-ico{font-size:1.3rem}
+.fm-doc-info{flex:1}
+.fm-doc-info h5{font-size:.81rem;color:var(--gold);margin-bottom:2px}
+.fm-doc-info p{font-size:.71rem;color:var(--silver)}
+.fm-doc-btn{padding:6px 12px;font-size:.63rem;color:var(--midnight);background:var(--gold);text-decoration:none;border-radius:4px;font-family:var(--font-title);letter-spacing:.05em;transition:all var(--tr);white-space:nowrap}
+.fm-doc-btn:hover{background:var(--gold-dark)}
+
+/* TRAITÉS */
+.traites-banner{border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:26px;text-align:center;margin-bottom:28px;background:linear-gradient(135deg,rgba(212,175,55,.04) 0%,rgba(0,0,0,.25) 100%);position:relative;overflow:hidden}
+.traites-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.traites-count{font-family:var(--font-title);font-size:2.8rem;color:var(--gold);font-weight:700;display:block;margin-bottom:3px;text-shadow:0 0 28px rgba(212,175,55,.28)}
+.traites-count-label{font-size:.9rem;color:var(--silver);letter-spacing:1px}
+.traites-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin:24px 0}
+.t-card{background:rgba(10,14,25,.8);border:1px solid rgba(212,175,55,.18);border-radius:14px;overflow:hidden;transition:all .32s;cursor:pointer;position:relative}
+.t-card:hover{border-color:rgba(212,175,55,.55);transform:translateY(-4px);box-shadow:0 16px 42px rgba(0,0,0,.5)}
+.t-card.pending{opacity:.7;cursor:default}
+.t-card.pending:hover{transform:none;box-shadow:none}
+.t-card-img{width:100%;height:160px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(15,22,37,.9),rgba(8,12,24,.95));position:relative}
+.t-card-flag{font-size:5rem;opacity:.22}
+.t-card-badge{position:absolute;top:10px;right:10px;background:rgba(6,8,16,.85);border:1px solid var(--gold);padding:4px 10px;border-radius:20px;font-family:var(--font-title);font-size:.58rem;color:var(--gold);letter-spacing:1px}
+.t-card-badge.pending{border-color:rgba(212,175,55,.35);color:var(--silver)}
+.t-card-body{padding:18px}
+.t-card-sigle{font-family:var(--font-title);font-size:1.3rem;color:var(--gold);font-weight:700;letter-spacing:2px;margin-bottom:6px}
+.t-card-name{font-size:.82rem;color:var(--silver);margin-bottom:9px;font-style:italic;line-height:1.4}
+.t-card-desc{font-size:.88rem;color:var(--parchment);line-height:1.65}
+.t-card-date{margin-top:11px;font-size:.75rem;color:var(--gold-dark);font-family:var(--font-title);letter-spacing:.5px}
+.t-card-sgc{margin-top:5px;font-size:.75rem;color:var(--silver)}
+.map-wrap{position:relative;background:rgba(8,12,24,.8);border:1px solid rgba(212,175,55,.25);border-radius:12px;overflow:hidden;margin-bottom:24px}
+.map-pin circle{transition:r .2s,fill .2s}
+.map-pin:hover circle:first-child{r:13;fill:rgba(212,175,55,.28)}
+#map-tooltip{display:none;position:absolute;background:rgba(8,12,24,.96);border:1px solid var(--gold);border-radius:8px;padding:9px 13px;font-size:.78rem;pointer-events:none;min-width:175px;z-index:10}
+.t-detail{display:none;background:rgba(12,18,35,.95);border:1px solid var(--gold);border-radius:12px;padding:18px;margin-bottom:22px}
+.t-detail.show{display:block;animation:fadeSlide .3s ease}
+
+/* ACCUEIL LIVRE */
+.livre-hero{background:linear-gradient(145deg,rgba(15,22,37,.97),rgba(8,12,18,.99));border:1px solid var(--gold);border-radius:14px;padding:22px 26px;max-width:640px;margin:0 auto 22px;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(212,175,55,.11),inset 0 0 50px rgba(212,175,55,.02)}
+.livre-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.livre-badge{display:inline-block;background:var(--gold);color:var(--midnight);font-family:var(--font-title);font-size:.62rem;font-weight:700;letter-spacing:.13em;padding:5px 15px;border-radius:20px;margin-bottom:13px;animation:pbadge 2.4s ease-in-out infinite}
+@keyframes pbadge{0%,100%{box-shadow:0 0 6px rgba(212,175,55,.3)}50%{box-shadow:0 0 18px rgba(212,175,55,.65)}}
+.livre-inner{display:flex;gap:22px;align-items:center}
+.livre-cover{flex-shrink:0;width:105px;height:155px;border:2px solid rgba(212,175,55,.45);border-radius:6px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.7)}
+.livre-cover img{width:100%;height:100%;object-fit:cover}
+.livre-info h3{font-family:var(--font-title);font-size:1.05rem;color:var(--gold);margin-bottom:5px;letter-spacing:.06em}
+.livre-info .auteur{font-size:.82rem;color:var(--gold-light);font-style:italic;margin-bottom:8px}
+.livre-info .desc{font-size:.88rem;color:var(--parchment);line-height:1.6;margin-bottom:12px}
+.books-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;max-width:640px;margin:0 auto 20px}
+.bk{background:rgba(15,22,37,.8);border:1px solid rgba(212,175,55,.16);border-radius:9px;padding:15px;text-align:center;transition:all var(--tr);position:relative;overflow:hidden}
+.bk:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 10px 28px rgba(212,175,55,.12)}
+.bk.new::after{content:'NOUVEAU';position:absolute;top:8px;right:-26px;background:var(--gold);color:var(--midnight);font-family:var(--font-title);font-size:.47rem;font-weight:700;padding:3px 32px;transform:rotate(45deg);letter-spacing:.09em}
+.bk-cover{width:85px;height:125px;margin:0 auto 9px;border:2px solid rgba(212,175,55,.32);border-radius:4px;overflow:hidden;background:var(--deep-blue)}
+.bk-cover img{width:100%;height:100%;object-fit:cover}
+.bk-t{font-family:var(--font-title);font-size:.83rem;color:var(--gold);margin-bottom:3px}
+.bk-a{font-size:.75rem;color:var(--gold-light);font-style:italic;margin-bottom:5px}
+.bk-d{font-size:.75rem;color:var(--parchment);opacity:.82;line-height:1.42;margin-bottom:8px}
+.bk-p{font-family:var(--font-title);font-size:.93rem;color:var(--gold);margin-bottom:8px}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .sidebar{position:fixed;top:0;left:0;bottom:0;transform:translateX(-100%);z-index:500;width:min(var(--sidebar-w),85vw)}
+  .sidebar.open{transform:translateX(0)}
+  .sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:499;backdrop-filter:blur(3px)}
+  .sb-overlay.on{display:block}
+  .topbar{display:flex}
+  .tab-pane{padding:14px 13px 26px}
+  .cgrid.c3{grid-template-columns:repeat(2,1fr)}
+  .cgrid.c2{grid-template-columns:1fr}
+  .mr,.mr.rev{flex-direction:column;align-items:center;text-align:center}
+  .mr img{width:120px}
+  .sc-grid{grid-template-columns:1fr}
+  .sym-row{grid-template-columns:repeat(3,1fr)}
+  .traites-grid{grid-template-columns:1fr}
+  .books-grid{grid-template-columns:1fr}
+  .livre-inner{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .cgrid.c2,.cgrid.c3{grid-template-columns:1fr}
+  .tab-pane{padding:11px 10px 20px}
+  .page-title{font-size:1.15rem}
+  .sym-row{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+lb-nav:hover{color:#fff}
+.lb-p{left:6px}.lb-n{right:6px}
+
+/* ═══ TUILAGE ═══ */
+.tbox{background:rgba(15,22,37,.8);border:1px solid rgba(212,175,55,.26);border-radius:11px;padding:20px;max-width:440px;margin:0 auto}
+.tbox h3{font-family:var(--font-title);color:var(--gold);text-align:center;margin-bottom:14px;font-size:.93rem;letter-spacing:.07em}
+.tq{margin-bottom:12px}
+.tq label{display:block;font-size:.73rem;color:var(--gold);margin-bottom:4px;font-family:var(--font-title);letter-spacing:.05em}
+.tq input{width:100%;padding:9px 12px;font-family:var(--font-body);font-size:.95rem;color:var(--parchment);background:rgba(8,12,24,.8);border:1px solid rgba(212,175,55,.2);border-radius:5px;transition:border-color var(--tr);outline:none}
+.tq input:focus{border-color:var(--gold)}
+.tsub{width:100%;padding:10px;font-family:var(--font-title);font-size:.76rem;letter-spacing:.09em;color:var(--midnight);background:var(--gold);border:none;border-radius:5px;cursor:pointer;transition:all var(--tr)}
+.tsub:hover{background:var(--gold-dark)}
+.t-err{display:none;margin-top:10px;padding:8px;background:rgba(231,76,60,.12);border:1px solid rgba(231,76,60,.35);color:#f0857a;text-align:center;font-size:.8rem;border-radius:5px}
+.t-err.show{display:block}
+.fm-c{display:none}.fm-c.show{display:block}
+.cbox{background:rgba(15,22,37,.8);border:1px solid var(--gold);border-radius:11px;padding:22px;text-align:center;max-width:370px;margin:18px auto}
+.cbox h3{font-family:var(--font-title);color:var(--gold);font-size:.97rem;margin-bottom:6px}
+
+/* ═══ SAUTOIRS ═══ */
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:10px;margin:13px 0}
+.si{text-align:center;background:rgba(15,22,37,.5);border:1px solid rgba(212,175,55,.16);border-radius:8px;padding:8px;cursor:pointer;transition:all var(--tr)}
+.si:hover{transform:scale(1.04);box-shadow:0 5px 16px rgba(212,175,55,.2);border-color:var(--gold)}
+.si img{width:100%;max-height:145px;object-fit:contain;border-radius:4px}
+.si-lbl{font-family:var(--font-title);font-size:.66rem;color:var(--gold);font-weight:700;margin-top:5px}
+.si-sub{font-size:.6rem;color:var(--gold-light)}
+.si.sp{border-color:rgba(212,175,55,.4);box-shadow:0 0 12px rgba(212,175,55,.07)}
+
+/* ═══ SOURCES ═══ */
+.src-ul{list-style:none;margin-top:7px}
+.src-ul li{padding:3px 0;font-size:.83rem;color:var(--parchment);opacity:.88;border-bottom:1px solid rgba(212,175,55,.05);line-height:1.4}
+.src-ul li::before{content:'◈ ';color:var(--gold);font-size:.66rem}
+
+/* ═══ MEMBRES ═══ */
+.mr{display:flex;gap:20px;align-items:flex-start;padding:17px;background:rgba(15,22,37,.5);border:1px solid rgba(212,175,55,.1);border-radius:9px;margin-bottom:13px}
+.mr.rev{flex-direction:row-reverse}
+.mr img{width:145px;max-height:205px;object-fit:contain;border:2px solid rgba(212,175,55,.36);border-radius:5px;flex-shrink:0;cursor:pointer;transition:transform var(--tr)}
+.mr img:hover{transform:scale(1.03)}
+.mr-info h3{font-family:var(--font-title);font-size:.93rem;color:var(--gold);margin-bottom:4px}
+.mr-info .role{font-size:.83rem;color:var(--gold-light);margin-bottom:3px}
+.mr-info .name{font-size:.97rem;color:var(--parchment);font-weight:500;margin-bottom:2px}
+.mr-info .grade{font-size:.8rem;color:var(--silver);font-style:italic}
+
+/* ═══ SUPRÊME CONSEIL ═══ */
+.sc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.sc-card{background:rgba(15,22,37,.7);border:1px solid rgba(212,175,55,.12);border-radius:9px;padding:15px;text-align:center;transition:all var(--tr)}
+.sc-card:hover{border-color:rgba(212,175,55,.3);transform:translateY(-2px)}
+.sc-card img{width:105px;max-height:145px;object-fit:contain;border:2px solid rgba(212,175,55,.36);border-radius:5px;margin-bottom:8px;cursor:pointer}
+.sc-card h4{font-family:var(--font-title);font-size:.63rem;color:var(--gold);margin-bottom:4px;letter-spacing:.05em;line-height:1.4}
+.sc-name{font-size:.88rem;color:var(--parchment);font-weight:500;margin-bottom:2px}
+.sc-role{font-size:.76rem;color:var(--silver);font-style:italic}
+.sc-stitle{font-family:var(--font-title);font-size:.7rem;color:var(--gold);text-align:center;letter-spacing:.11em;text-transform:uppercase;padding:13px 0 8px;border-bottom:1px solid rgba(212,175,55,.12);margin-bottom:12px}
+
+/* ═══ TABLE COMPARATIF ═══ */
+.tw{overflow-x:auto;margin:12px 0;border-radius:8px;border:1px solid rgba(212,175,55,.12)}
+table.ct{width:100%;border-collapse:collapse;font-size:.75rem}
+table.ct th{background:rgba(212,175,55,.12);color:var(--gold);padding:8px 6px;text-align:center;font-family:var(--font-title);font-size:.66rem;letter-spacing:.05em;white-space:nowrap}
+table.ct td{padding:7px 6px;border:1px solid rgba(212,175,55,.08);vertical-align:top;color:var(--parchment)}
+table.ct tr:nth-child(even) td{background:rgba(15,22,37,.4)}
+table.ct tr:hover td{background:rgba(212,175,55,.05)}
+table.ct .bi{border-left:2px solid var(--gold)!important;background:rgba(212,175,55,.06)}
+table.ct .gn{color:var(--gold);font-weight:700;text-align:center;width:28px}
+.myt{font-style:italic;color:var(--gold-light);font-size:.68rem}
+
+/* ═══ SYMBOLES ═══ */
+.sym-row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:12px 0}
+.sym-it{text-align:center;padding:8px 4px;background:rgba(15,22,37,.55);border:1px solid rgba(212,175,55,.12);border-radius:8px;transition:all var(--tr);cursor:pointer}
+.sym-it:hover{border-color:var(--gold);transform:scale(1.05)}
+.sym-ico{width:44px;height:44px;border-radius:50%;border:2px solid rgba(212,175,55,.32);display:flex;align-items:center;justify-content:center;margin:0 auto 4px;background:var(--deep-blue);overflow:hidden}
+.sym-ico img{width:65%;height:65%;object-fit:contain}
+.sym-n{font-family:var(--font-title);font-size:.54rem;color:var(--gold)}
+.sym-h{font-family:var(--font-heb);font-size:.72rem;color:var(--gold-light)}
+
+/* ═══ FM DOCS ═══ */
+.fm-doc{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(15,22,37,.6);border:1px solid rgba(212,175,55,.12);border-radius:8px;margin-bottom:8px;transition:all var(--tr)}
+.fm-doc:hover{border-color:rgba(212,175,55,.26)}
+.fm-doc-ico{font-size:1.3rem}
+.fm-doc-info{flex:1}
+.fm-doc-info h5{font-size:.81rem;color:var(--gold);margin-bottom:2px}
+.fm-doc-info p{font-size:.71rem;color:var(--silver)}
+.fm-doc-btn{padding:6px 12px;font-size:.63rem;color:var(--midnight);background:var(--gold);text-decoration:none;border-radius:4px;font-family:var(--font-title);letter-spacing:.05em;transition:all var(--tr);white-space:nowrap}
+.fm-doc-btn:hover{background:var(--gold-dark)}
+
+/* ═══ TRAITÉS — NOUVEAUX STYLES ═══ */
+.traites-banner{border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:26px;text-align:center;margin-bottom:28px;background:linear-gradient(135deg,rgba(212,175,55,.04) 0%,rgba(0,0,0,.25) 100%);position:relative;overflow:hidden}
+.traites-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.traites-count{font-family:var(--font-title);font-size:2.8rem;color:var(--gold);font-weight:700;display:block;margin-bottom:3px;text-shadow:0 0 28px rgba(212,175,55,.28)}
+.traites-count-label{font-size:.9rem;color:var(--silver);letter-spacing:1px}
+
+.traites-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin:24px 0}
+.t-card{background:rgba(10,14,25,.8);border:1px solid rgba(212,175,55,.18);border-radius:14px;overflow:hidden;transition:all .32s;cursor:pointer;position:relative}
+.t-card:hover{border-color:rgba(212,175,55,.55);transform:translateY(-4px);box-shadow:0 16px 42px rgba(0,0,0,.5),0 0 22px rgba(212,175,55,.07)}
+.t-card.pending{opacity:.7;cursor:default}
+.t-card.pending:hover{transform:none;box-shadow:none;border-color:rgba(212,175,55,.18)}
+.t-card-img{width:100%;height:200px;overflow:hidden;position:relative;background:linear-gradient(145deg,rgba(15,22,37,.9),rgba(8,12,24,.95))}
+.t-card-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s ease;opacity:.85}
+.t-card:hover .t-card-img img{transform:scale(1.05)}
+.t-card-flag{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;font-size:4.5rem;opacity:.18}
+.t-card-badge{position:absolute;top:10px;right:10px;background:rgba(6,8,16,.85);border:1px solid var(--gold);padding:4px 10px;border-radius:20px;font-family:var(--font-title);font-size:.58rem;color:var(--gold);letter-spacing:1px;backdrop-filter:blur(8px)}
+.t-card-badge.pending{border-color:rgba(212,175,55,.35);color:var(--silver)}
+.t-card-body{padding:18px}
+.t-card-sigle{font-family:var(--font-title);font-size:1.4rem;color:var(--gold);font-weight:700;letter-spacing:2px;margin-bottom:6px}
+.t-card-name{font-size:.82rem;color:var(--silver);margin-bottom:9px;font-style:italic;line-height:1.4}
+.t-card-desc{font-size:.88rem;color:var(--parchment);line-height:1.65}
+.t-card-date{margin-top:11px;font-size:.75rem;color:var(--gold-dark);font-family:var(--font-title);letter-spacing:.5px}
+.t-card-sgc{margin-top:5px;font-size:.75rem;color:var(--silver)}
+
+/* CARTE MONDE */
+.map-wrap{position:relative;background:rgba(8,12,24,.8);border:1px solid rgba(212,175,55,.25);border-radius:12px;overflow:hidden;margin-bottom:24px}
+.map-pin circle.pin-ring{transition:r .2s,fill .2s}
+.map-pin:hover circle.pin-ring{r:13;fill:rgba(212,175,55,.28)}
+.map-pin:hover circle.pin-dot{fill:#fff}
+#map-tooltip{display:none;position:absolute;background:rgba(8,12,24,.96);border:1px solid var(--gold);border-radius:8px;padding:9px 13px;font-size:.78rem;pointer-events:none;min-width:175px;z-index:10}
+
+/* DÉTAIL TRAITÉ */
+.t-detail{display:none;background:rgba(12,18,35,.95);border:1px solid var(--gold);border-radius:12px;padding:18px;margin-bottom:22px}
+.t-detail.show{display:block;animation:fadeSlide .3s ease}
+
+/* ═══ ACCUEIL — LIVRE ═══ */
+.livre-hero{background:linear-gradient(145deg,rgba(15,22,37,.97),rgba(8,12,18,.99));border:1px solid var(--gold);border-radius:14px;padding:22px 26px;max-width:640px;margin:0 auto 22px;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(212,175,55,.11),inset 0 0 50px rgba(212,175,55,.02)}
+.livre-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.livre-badge{display:inline-block;background:var(--gold);color:var(--midnight);font-family:var(--font-title);font-size:.62rem;font-weight:700;letter-spacing:.13em;padding:5px 15px;border-radius:20px;margin-bottom:13px;animation:pbadge 2.4s ease-in-out infinite}
+@keyframes pbadge{0%,100%{box-shadow:0 0 6px rgba(212,175,55,.3)}50%{box-shadow:0 0 18px rgba(212,175,55,.65)}}
+.livre-inner{display:flex;gap:22px;align-items:center}
+.livre-cover{flex-shrink:0;width:105px;height:155px;border:2px solid rgba(212,175,55,.45);border-radius:6px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.7)}
+.livre-cover img{width:100%;height:100%;object-fit:cover}
+.livre-info h3{font-family:var(--font-title);font-size:1.05rem;color:var(--gold);margin-bottom:5px;letter-spacing:.06em}
+.livre-info .auteur{font-size:.82rem;color:var(--gold-light);font-style:italic;margin-bottom:8px}
+.livre-info .desc{font-size:.88rem;color:var(--parchment);line-height:1.6;margin-bottom:12px}
+.livre-info .prix{font-family:var(--font-title);font-size:1.1rem;color:var(--gold);margin-bottom:10px}
+
+/* ═══ BOOKS GRID ═══ */
+.books-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;max-width:640px;margin:0 auto 20px}
+.bk{background:rgba(15,22,37,.8);border:1px solid rgba(212,175,55,.16);border-radius:9px;padding:15px;text-align:center;transition:all var(--tr);position:relative;overflow:hidden}
+.bk:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 10px 28px rgba(212,175,55,.12)}
+.bk.new::after{content:'NOUVEAU';position:absolute;top:8px;right:-26px;background:var(--gold);color:var(--midnight);font-family:var(--font-title);font-size:.47rem;font-weight:700;padding:3px 32px;transform:rotate(45deg);letter-spacing:.09em}
+.bk-cover{width:85px;height:125px;margin:0 auto 9px;border:2px solid rgba(212,175,55,.32);border-radius:4px;overflow:hidden;background:var(--deep-blue)}
+.bk-cover img{width:100%;height:100%;object-fit:cover}
+.bk-t{font-family:var(--font-title);font-size:.83rem;color:var(--gold);margin-bottom:3px}
+.bk-a{font-size:.75rem;color:var(--gold-light);font-style:italic;margin-bottom:5px}
+.bk-d{font-size:.75rem;color:var(--parchment);opacity:.82;line-height:1.42;margin-bottom:8px}
+.bk-p{font-family:var(--font-title);font-size:.93rem;color:var(--gold);margin-bottom:8px}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  .sidebar{position:fixed;top:0;left:0;bottom:0;transform:translateX(-100%);z-index:500;width:min(var(--sidebar-w),85vw)}
+  .sidebar.open{transform:translateX(0)}
+  .sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:499;backdrop-filter:blur(3px)}
+  .sb-overlay.on{display:block}
+  .topbar{display:flex}
+  .breadcrumb{padding:5px 13px}
+  .tab-pane{padding:14px 13px 26px}
+  .cgrid.c3{grid-template-columns:repeat(2,1fr)}
+  .cgrid.c2{grid-template-columns:1fr}
+  .mr,.mr.rev{flex-direction:column;align-items:center;text-align:center}
+  .mr img{width:120px}
+  .sc-grid{grid-template-columns:1fr}
+  .sym-row{grid-template-columns:repeat(3,1fr)}
+  .traites-grid{grid-template-columns:1fr}
+  .books-grid{grid-template-columns:1fr}
+  .livre-inner{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .cgrid.c2,.cgrid.c3{grid-template-columns:1fr}
+  .tab-pane{padding:11px 10px 20px}
+  .page-title{font-size:1.15rem}
+  .sym-row{grid-template-columns:repeat(2,1fr)}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- BG -->
+<div class="bg-stars" id="bgStars"></div>
+<div class="bg-logo"></div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <span class="lb-x" onclick="lbClose()">×</span>
+  <span class="lb-nav lb-p" onclick="lbNav(-1)">&#10094;</span>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-cap" id="lb-cap"></div>
+  <span class="lb-nav lb-n" onclick="lbNav(1)">&#10095;</span>
+</div>
+<div class="sb-overlay" id="sbOverlay" onclick="closeSB()"></div>
+<button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
+
+<div class="app">
+
+<!-- ═══════════ SIDEBAR ═══════════ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sb-brand" onclick="showTab('accueil')">
+    <img src="https://static.wixstatic.com/media/73e6ef_d04fc4ad5e554c08880a37a7a3b580e9~mv2.png" alt="Logo RBI" class="sb-brand-logo">
+    <div class="sb-heb">ברית ישראל</div>
+    <div class="sb-title">Rite Brith Israël<sup>®</sup></div>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('it')">IT</button>
+    <button class="lang-btn" onclick="setLang('he')">עב</button>
+  </div>
+  <nav class="nav-scroll" id="navScroll">
+    <div class="nav-sec">Public</div>
+    <div class="nav-item active" data-tab="accueil" onclick="showTab('accueil')"><span class="nav-ico">⌂</span><span class="nav-label">Accueil</span></div>
+    <div class="nav-item" data-tab="presentation" onclick="showTab('presentation')"><span class="nav-ico">✦</span><span class="nav-label">Présentation</span></div>
+    <div class="nav-item" data-tab="valeurs" onclick="showTab('valeurs')"><span class="nav-ico">◎</span><span class="nav-label">Valeurs</span></div>
+    <div class="nav-sec">L'Ordre</div>
+    <div class="nav-item" data-tab="commandeur" onclick="showTab('commandeur')"><span class="nav-ico">⚜</span><span class="nav-label">Chefs de l'Ordre</span></div>
+    <div class="nav-item" data-tab="supreme-conseil" onclick="showTab('supreme-conseil')"><span class="nav-ico">▲</span><span class="nav-label">Suprême Conseil</span></div>
+    <div class="nav-item" data-tab="degres" onclick="showTab('degres')"><span class="nav-ico">✡</span><span class="nav-label">33 Degrés</span></div>
+    <div class="nav-sec">Tradition</div>
+    <div class="nav-item" data-tab="comparatif" onclick="showTab('comparatif')"><span class="nav-ico">⟺</span><span class="nav-label">Comparatif Rites</span></div>
+    <div class="nav-item" data-tab="symboles" onclick="showTab('symboles')"><span class="nav-ico">✶</span><span class="nav-label">Symboles</span></div>
+    <div class="nav-item" data-tab="decors" onclick="showTab('decors')"><span class="nav-ico">◈</span><span class="nav-label">Décors</span></div>
+    <div class="nav-item" data-tab="sources" onclick="showTab('sources')"><span class="nav-ico">📜</span><span class="nav-label">Sources</span></div>
+    <div class="nav-sec">Rejoindre</div>
+    <div class="nav-item" data-tab="traites" onclick="showTab('traites')"><span class="nav-ico">🌍</span><span class="nav-label">Traités Intl.</span></div>
+    <div class="nav-item" data-tab="publications" onclick="showTab('publications')"><span class="nav-ico">📖</span><span class="nav-label">Publications</span></div>
+    <div class="nav-item" data-tab="ouvrir-loge" onclick="showTab('ouvrir-loge')"><span class="nav-ico">🏛</span><span class="nav-label">Ouvrir une Loge</span></div>
+    <div class="nav-item" data-tab="devenir-fm" onclick="showTab('devenir-fm')"><span class="nav-ico">◇</span><span class="nav-label">Devenir FM</span></div>
+    <div class="nav-sec">Réservé</div>
+    <div class="nav-item" data-tab="espace-fm" onclick="showTab('espace-fm')"><span class="nav-ico">🔐</span><span class="nav-label">Espace FM</span></div>
+    <div class="nav-item" data-tab="contact" onclick="showTab('contact')"><span class="nav-ico">✉</span><span class="nav-label">Contact</span></div>
+  </nav>
+  <div class="sb-footer"><a href="https://www.brith-israel.org" target="_blank">www.brith-israel.org</a></div>
+</aside>
+
+<!-- ═══════════ MAIN ═══════════ -->
+<div class="main-wrap">
+  <div class="topbar">
+    <div class="tb-left">
+      <img src="https://static.wixstatic.com/media/73e6ef_d04fc4ad5e554c08880a37a7a3b580e9~mv2.png" alt="Logo" class="tb-logo">
+      <span class="tb-title">Rite Brith Israël<sup>®</sup></span>
+    </div>
+    <button class="burger" id="burgerBtn" onclick="toggleSB()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="breadcrumb">
+    <span class="bc">RBI</span><span class="bc-sep">›</span>
+    <span class="bc cur" id="bcCurrent">Accueil</span>
+  </div>
+  <div class="content-wrap">
+
+<!-- ═══════════════════════════════════
+     ACCUEIL
+═══════════════════════════════════ -->
+<div class="tab-pane active" id="pane-accueil">
+  <div style="text-align:center;padding:18px 0 14px">
+    <div style="font-family:var(--font-heb);font-size:2.5rem;color:var(--gold);text-shadow:0 0 35px rgba(212,175,55,.5);margin-bottom:4px">ברית ישראל</div>
+    <h1 style="font-family:var(--font-title);font-size:2.1rem;letter-spacing:.18em;text-transform:uppercase;color:var(--parchment)">Rite Brith Israël<sup style="font-size:.38em;color:var(--gold)">®</sup></h1>
+    <p style="font-size:1rem;color:var(--gold-light);letter-spacing:.16em;margin-top:5px">L'Alliance d'Israël</p>
+  </div>
+
+  <!-- LIVRE PHARE -->
+  <div class="livre-hero">
+    <div style="text-align:center;margin-bottom:16px">
+      <div class="livre-badge">📖 NOUVELLE PUBLICATION — DISPONIBLE SUR AMAZON</div>
+    </div>
+    <div class="livre-inner">
+      <div class="livre-cover">
+        <img src="https://static.wixstatic.com/media/73e6ef_4413f119047743d582d61d15c7e39d57~mv2.png" alt="Guide de Survie pour Franc-Maçon Désemparé">
+      </div>
+      <div class="livre-info">
+        <h3>Guide de Survie pour<br>Franc-Maçon Désemparé</h3>
+        <div class="auteur">Mickaël DARMON — Souverain Grand Commandeur 33°</div>
+        <p class="desc">« Une boussole pour tous les chercheurs sans permission. » Démystification, résilience et sagesse maçonnique au quotidien. Un manuel pédagogique pour transformer les outils symboliques en leviers de développement personnel, accessible à tous.</p>
+        <div class="prix" style="color:var(--gold)">Disponible sur Amazon</div>
+        <a href="https://amzn.eu/d/03LwhX1a" target="_blank" class="btn btn-g" style="font-size:.7rem">Commander sur Amazon ›</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <div class="books-grid">
+    <div class="bk new">
+      <div class="bk-cover"><img src="https://static.wixstatic.com/media/73e6ef_1b6d8e697d134d5080cf52dc0e33143e~mv2.png" alt="L'Alliance"></div>
+      <div class="bk-t">L'Alliance</div>
+      <div class="bk-a">Mickaël DARMON</div>
+      <div class="bk-d">Fondements spirituels et philosophiques du Rite Brith Israël.</div>
+      <div class="bk-p">30 €</div>
+      <a href="https://www.coollibri.com/bibliotheque-en-ligne/mickael-darmon/brith-israel-lalliance-de-lumiere_1428718" target="_blank" class="btn btn-g" style="font-size:.63rem;padding:7px 14px">Commander</a>
+    </div>
+    <div class="bk">
+      <div class="bk-cover"><img src="https://static.wixstatic.com/media/73e6ef_adcf14536545488fbfabe53783c3d222~mv2.jpeg" alt="Tome I"></div>
+      <div class="bk-t">Tome I — Grades Symboliques</div>
+      <div class="bk-a">Rituels officiels</div>
+      <div class="bk-d">Rituels complets des trois premiers degrés. 280 pages.</div>
+      <div class="bk-p">40 €</div>
+      <a href="mailto:contact.brith.israel@gmail.com" class="btn btn-o" style="font-size:.63rem;padding:7px 14px">Réservé aux FM</a>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:6px">
+    <button class="btn btn-g" onclick="showTab('presentation')">Découvrir le Rite ›</button>
+  </div>
+  <p style="font-size:.56rem;color:rgba(168,168,184,.3);text-align:center;margin-top:26px;padding-top:12px;border-top:1px solid rgba(212,175,55,.04)">Le nom "Brith Israël®" et l'ensemble des textes, rituels et règlements constituent une œuvre protégée. © 2025 Rite Brith Israël® — Tous droits réservés.</p>
+</div>
+
+<!-- ═══════════════════════════════════
+     PRÉSENTATION
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-presentation">
+<div class="page-hero"><div class="page-heb">הצגה</div><h2 class="page-title">Présentation</h2></div>
+<div class="sec-block">
+<p class="prose">Le <strong>Rite Brith Israël</strong> — « L'Alliance d'Israël » (בְּרִית יִשְׂרָאֵל) — est un Rite Maçonnique Déiste de tradition hébraïque et kabbalistique. Il est l'aboutissement d'un chemin de fidélité, porté par une exigence rare : celle de la cohérence spirituelle, de l'authenticité textuelle et de la transmission vivante.</p>
+<div class="card hl" style="text-align:center;margin:15px 0"><p style="font-size:.99rem"><strong>Le Rite Brith Israël n'est PAS réservé aux Juifs.</strong><br>C'est un Rite Maçonnique ouvert à tous les croyants qui reconnaissent un Principe Créateur.</p></div>
+<p class="prose">Le Rite Brith Israël ne se fonde pas sur l'esprit de Saint Jean, qui structure une large part de la franc-maçonnerie occidentale. Son enracinement est plus ancien, plus originel : <strong>il se tient dans l'esprit de la Genèse</strong>. Notre Rite a choisi la figure de <strong>Joseph</strong> (Genèse 37-50) comme modèle central — l'homme de la résilience, qui ne cesse de tomber mais à chaque chute cherche le sens, travaille, et finit par s'élever.</p>
+<div class="qblock">« Voilà la Maçonnerie que nous vous proposons : non pas pleurer sur une parole perdue, mais transformer nos épreuves en force pour nourrir le monde. Une Maçonnerie de la Vie. »</div>
+<div class="cgrid c3">
+  <div class="card"><div class="ctitle">☰ Tradition</div><p class="cbody">Enraciné dans la Torah, le Zohar et les enseignements kabbalistiques, le Rite honore la langue sacrée de l'hébreu et les symboles du Temple de Salomon.</p></div>
+  <div class="card"><div class="ctitle">Universalité</div><p class="cbody">Ouvert à tous. Ce que nous demandons : la croyance en un Principe Créateur, la sincérité de la démarche, l'intégrité morale.</p></div>
+  <div class="card"><div class="ctitle">◎ Initiation</div><p class="cbody">Les 33 degrés s'inscrivent dans l'Arbre de Vie kabbalistique. Dès le premier degré, l'Apprenti voit l'Arbre entier. Ce qui change, c'est le regard de l'initié.</p></div>
+</div>
+<div class="divider"></div>
+<div class="card hl" style="text-align:center"><div class="ctitle">תיקון עולם — Le Tiqqun Olam</div><p class="cbody">C'est un concept central de notre Rite. L'idée est simple mais vertigineuse : le monde est brisé. Il y a des éclats de lumière dispersés partout. Si chaque Maçon s'efforce de devenir plus juste, plus éclairé, plus fraternel, alors il répare sa part du monde. <strong>Le changement commence par soi.</strong></p></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     VALEURS
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-valeurs">
+<div class="page-hero"><div class="page-heb">הערכים שלנו</div><h2 class="page-title">Nos Valeurs</h2></div>
+<div class="sec-block">
+<p class="prose">La Franc-Maçonnerie est née d'une soif de sens. Elle n'est pas une religion — elle est une <strong>méthode</strong>. Une méthode ancienne, éprouvée, pour chercher, pour progresser, pour se construire. Le Franc-Maçon travaille sur lui-même comme le tailleur de pierre travaille sur la pierre brute.</p>
+<div class="cgrid c2">
+  <div class="card"><div class="ctitle">אמונה — Emounah (Foi)</div><p class="cbody">La croyance en un <strong>Principe Créateur</strong>. Nous l'appelons le Grand Architecte de l'Univers. Chacun est libre de lui donner le nom qu'il souhaite. Cette foi est une confiance profonde dans le Principe Créateur de l'Univers — le socle sur lequel repose tout l'édifice initiatique.</p></div>
+  <div class="card"><div class="ctitle">אחווה — A'hava (Fraternité)</div><p class="cbody">Dans un monde de plus en plus individualiste, la Loge offre une <strong>communauté authentique</strong>. L'ouvrier s'assoit à côté du médecin. Les barrières sociales, professionnelles, générationnelles tombent. Ensemble, nous formons une chaîne d'union indestructible.</p></div>
+  <div class="card"><div class="ctitle">חכמה — 'Hokhmah (Sagesse)</div><p class="cbody">La Franc-Maçonnerie ne donne pas de réponses toutes faites. Elle fournit des <strong>outils pour explorer</strong>. L'équerre enseigne la droiture. Le compas enseigne la mesure. Le niveau enseigne l'égalité.</p></div>
+  <div class="card"><div class="ctitle">צדקה — Tsedakah (Justice)</div><p class="cbody">Plus qu'une simple justice distributive, la Tsedakah englobe la charité, la droiture et l'action juste. Elle est le <strong>devoir sacré</strong> de soutenir son prochain, de redresser les torts et de contribuer à l'équilibre du monde.</p></div>
+</div>
+<div class="cgrid c3" style="margin-top:13px">
+  <div class="card"><div class="ctitle">תיקון עולם — Tiqqun Olam</div><p class="cbody">La « <strong>réparation du monde</strong> ». Si chaque Maçon devient plus juste, plus éclairé, plus fraternel, il répare sa part du monde.</p></div>
+  <div class="card"><div class="ctitle">אמת — Emet (Vérité)</div><p class="cbody">Nous cherchons des <strong>cherchants qui veulent travailler</strong>. Pas des curieux qui veulent voir le spectacle. La sincérité est fondamentale.</p></div>
+  <div class="card"><div class="ctitle">שלום — Shalom (Paix)</div><p class="cbody">Le Shalom n'est pas seulement l'absence de conflit, mais un état d'<strong>harmonie et de plénitude</strong>. Le but ultime de notre travail maçonnique.</p></div>
+</div>
+<div class="card" style="margin-top:17px;text-align:center"><div class="ctitle">🔨 L'Art de la Pierre</div><div class="qblock" style="margin-top:9px">« Imaginez un bloc de pierre, tout juste sorti de la carrière. Il est informe, rugueux, plein d'aspérités. C'est nous, avec nos préjugés, nos colères, nos passions désordonnées. Le travail maçonnique consiste à prendre le ciseau et le maillet pour ôter ce qui est de trop. Pour révéler la forme parfaite qui est cachée à l'intérieur. »</div></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHEFS DE L'ORDRE
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-commandeur">
+<div class="page-hero"><div class="page-heb">ראשי הסדר</div><h2 class="page-title">Les Chefs de l'Ordre</h2></div>
+<div class="sec-block">
+<div class="mr">
+  <img src="https://static.wixstatic.com/media/73e6ef_92a29a059b2b4db38447fbb41375160e~mv2.jpeg" alt="Mickaël DARMON" onclick="lbOpen(this.src,'T∴I∴F∴ Mickaël DARMON — Souverain Grand Commandeur 33°')">
+  <div class="mr-info"><h3>Le Grand Maître</h3><p class="role">Souverain Grand Commandeur 33°</p><p class="name"><strong>Très Illustre Frère Mickaël DARMON</strong></p><p class="grade">Fondateur & Gardien du Rite</p></div>
+</div>
+<div class="mr rev">
+  <img src="https://static.wixstatic.com/media/73e6ef_69bf31381d154d638663d48ba53bacb8~mv2.jpg" alt="Gérard MENE" onclick="lbOpen(this.src,'T∴I∴F∴ Gérard MENE SAFFRANE — Lieutenant Souverain Commandeur 32°')">
+  <div class="mr-info"><h3>Assistant Grand Maître</h3><p class="role">Lieutenant Souverain Commandeur</p><p class="name"><strong>Très Illustre Frère Gérard MENE SAFFRANE</strong></p><p class="grade">32° Brith Israël</p></div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     SUPRÊME CONSEIL
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-supreme-conseil">
+<div class="page-hero"><div class="page-heb">המועצה העליונה</div><h2 class="page-title">Suprême Conseil</h2></div>
+<div class="sec-block">
+<div class="sc-stitle">Direction</div>
+<div class="sc-grid">
+  <div class="sc-card"><img src="https://static.wixstatic.com/media/73e6ef_92a29a059b2b4db38447fbb41375160e~mv2.jpeg" alt="SGC" onclick="lbOpen(this.src,'T∴I∴F∴ Mickaël DARMON')"><h4>Grand Maître · Souverain Grand Commandeur 33°</h4><p class="sc-name">T∴I∴F∴ Mickaël DARMON</p><p class="sc-role">Fondateur & Gardien du Rite</p></div>
+  <div class="sc-card"><img src="https://static.wixstatic.com/media/73e6ef_69bf31381d154d638663d48ba53bacb8~mv2.jpg" alt="LGC" onclick="lbOpen(this.src,'T∴I∴F∴ Gérard MENE SAFFRANE')"><h4>Grand Maître Adjoint · Lieutenant Souverain Commandeur</h4><p class="sc-name">T∴I∴F∴ Gérard MENE SAFFRANE</p><p class="sc-role">32° Brith Israël</p></div>
+</div>
+<div class="sc-stitle" style="margin-top:20px">Grands Maîtres Adjoints</div>
+<div class="sc-grid">
+  <div class="sc-card"><img src="https://static.wixstatic.com/media/73e6ef_5619d391e70d41109155c189cd115898~mv2.jpeg" alt="Jean Michel RAUX" onclick="lbOpen(this.src,'T∴I∴F∴ Jean Michel RAUX')"><h4>Grand Maître Adjoint · Grand Trésorier</h4><p class="sc-name">T∴I∴F∴ Jean Michel RAUX</p><p class="sc-role">32° Brith Israël</p></div>
+  <div class="sc-card"><img src="https://static.wixstatic.com/media/73e6ef_ed2ead8e8026473a8cda3212e8db967d~mv2.jpg" alt="Martine HABERT" onclick="lbOpen(this.src,'T∴I∴S∴ Martine HABERT')"><h4>Grand Maître Adjoint · Grand Secrétaire</h4><p class="sc-name">T∴I∴S∴ Martine HABERT</p><p class="sc-role">32° Brith Israël</p></div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     33 DEGRÉS
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-degres">
+<div class="page-hero"><div class="page-heb">שלושים ושלוש מעלות</div><h2 class="page-title">Les 33 Degrés</h2></div>
+<div class="sec-block">
+<p class="prose">Le système initiatique du Rite Brith Israël est entièrement fondé sur la structure de l'Arbre de Vie kabbalistique. Les 33 degrés s'inscrivent dans une <strong>architecture unique</strong> : 10 Séphiroth + 22 Sentiers + 1 Couronne. L'initié sait toujours où il se trouve sur la carte.</p>
+<div style="text-align:center;margin:13px 0">
+  <img src="https://static.wixstatic.com/media/73e6ef_79662daaf14a4bfebb96197d45480575~mv2.png" alt="Roue 33 degrés" style="max-width:230px;width:100%;border:2px solid rgba(212,175,55,.38);border-radius:7px;cursor:pointer" onclick="lbOpen(this.src,'Les 33 Degrés du Rite Brith Israël')">
+</div>
+<div class="card hl" style="text-align:center;margin:17px 0">
+  <div class="ctitle">Les Trois Cercles</div>
+  <p class="cbody"><strong>Premier Cercle — Loges Symboliques (1°-3°)</strong><br>Apprenti, Compagnon, Maître — Monde d'<em>Assiah</em> (Action)<br><br><strong>Deuxième Cercle — Loges de Perfection (4°-10°)</strong><br>Remontée de l'Arbre de Vie à travers les Séphiroth — Monde de <em>Yetzirah</em> (Formation)<br><br><strong>Troisième Cercle — Chapitres (11°-33°)</strong><br>Les vingt-deux Sentiers plus le 33e degré — Mondes de <em>Beriah</em> et <em>Atziluth</em></p>
+</div>
+<div class="cgrid c3">
+  <div class="card"><div class="ctitle">1°-10° : Les Sephiroth</div><p class="cbody">L'initié commence à <strong>Malkuth</strong> (le Royaume) et s'élève jusqu'à <strong>Kether</strong> (la Couronne). Chaque Sephira porte un titre, un âge symbolique, une lettre hébraïque et un enseignement propre.</p></div>
+  <div class="card"><div class="ctitle">11°-32° : Les Sentiers</div><p class="cbody">Les vingt-deux degrés suivants parcourent les Sentiers qui relient les Sephiroth. Chaque Sentier est associé à l'une des <strong>22 lettres hébraïques</strong> — d'Aleph (א) à Tav (ת).</p></div>
+  <div class="card"><div class="ctitle">33° : Kether Atziluth</div><p class="cbody">Le trente-troisième degré représente la <strong>Couronne dans le Monde de l'Émanation</strong>. Degré suprême réservé au Souverain Grand Commandeur, Gardien du Rite.</p></div>
+</div>
+<div class="cgrid c2" style="margin-top:13px">
+  <div class="card"><div class="ctitle">Le Tableau Unique</div><p class="cbody">Au Rite Brith Israël, nous utilisons un <strong>Tableau Unique : l'Arbre de Vie complet</strong>. Dès le premier degré, l'Apprenti voit l'Arbre entier. Ce qui change, c'est le regard de l'initié.</p></div>
+  <div class="card"><div class="ctitle">Trois Officiers</div><p class="cbody">Le <strong>Vénérable Maître (HaNassi)</strong> incarne l'Équilibre, le <strong>Premier Surveillant (HaShomer Rishon)</strong> la Rigueur, le <strong>Second Surveillant (HaShomer Sheni)</strong> la Miséricorde.</p></div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     COMPARATIF
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-comparatif">
+<div class="page-hero"><div class="page-heb">השוואת מנהגים</div><h2 class="page-title">Comparatif des Rites</h2></div>
+<div class="sec-block">
+<div class="alert a-gold"><h4>Un Rite MAÇONNIQUE, non réservé aux Juifs</h4><p>Le Rite Brith Israël est un <strong>Rite Maçonnique à part entière</strong>, ouvert à <strong>tous les croyants</strong> — hommes et femmes — qui reconnaissent l'existence d'un Principe Créateur.</p></div>
+<div class="tw">
+<table class="ct">
+  <tr><th>Critère</th><th>REAA</th><th>RER</th><th>RF</th><th>Memphis</th><th>Brith Israël</th></tr>
+  <tr><td><strong>Degrés</strong></td><td style="text-align:center">33</td><td style="text-align:center">7</td><td style="text-align:center">7</td><td style="text-align:center">95/99</td><td class="bi" style="text-align:center"><strong>33</strong></td></tr>
+  <tr><td><strong>Tradition</strong></td><td>Salomonienne + Templière</td><td>Chrétienne chevaleresque</td><td>Rationaliste / Laïque</td><td>Égyptienne + Hermétique</td><td class="bi"><strong>Hébraïque / Kabbalistique</strong></td></tr>
+  <tr><td><strong>Mythe central</strong></td><td>Hiram + Templiers</td><td>Hiram + Christ</td><td>Hiram (symbolique)</td><td>Osiris + Hiram</td><td class="bi"><strong>Joseph (יוסף) + Arbre de Vie</strong></td></tr>
+  <tr><td><strong>Structure</strong></td><td>Temple de Salomon</td><td>Chevalerie spirituelle</td><td>Philosophie morale</td><td>Pyramide / Alchimie</td><td class="bi"><strong>10 Sephiroth + 22 Sentiers</strong></td></tr>
+  <tr><td><strong>Textes</strong></td><td>Bible, Anderson</td><td>Bible, Évangiles</td><td>Raison, Humanisme</td><td>Livre des Morts, Hermès</td><td class="bi"><strong>Torah, Zohar, Sefer Yetzirah</strong></td></tr>
+  <tr><td><strong>Langue sacrée</strong></td><td>Hébreu (mots)</td><td>Latin + Hébreu</td><td>Français</td><td>Égyptien + Hébreu</td><td class="bi"><strong>Hébreu (toujours traduit)</strong></td></tr>
+  <tr><td><strong>Mixité</strong></td><td>Hommes (majorité)</td><td>Hommes uniquement</td><td>Mixte possible</td><td>Mixte</td><td class="bi"><strong>Mixte (H + F)</strong></td></tr>
+  <tr><td><strong>Exigence</strong></td><td>GADLU (déiste)</td><td>Chrétien pratiquant</td><td>Aucune (adogmatique)</td><td>GADLU</td><td class="bi"><strong>Principe Créateur (obligatoire)</strong></td></tr>
+</table>
+</div>
+<div class="alert a-gold" style="margin-top:17px"><h4>Le Mythe de Joseph dans le Rite Brith Israël</h4><p>Contrairement aux autres rites, le Rite Brith Israël est fondé sur le <strong>mythe de Joseph</strong> (יוסף) : Joseph trahi par ses frères → Descente en Égypte (épreuve) → Élévation au rang de vizir (renaissance) → Réconciliation et reconstruction de l'Alliance. Joseph = Tsadik (le Juste). Pas de mort violente ni de vengeance — un parcours de <strong>transformation et d'harmonie</strong>.</p></div>
+<div class="tw" style="margin-top:17px">
+<table class="ct">
+  <tr><th>Grade</th><th>REAA</th><th>RER</th><th>RF</th><th>Memphis</th><th>Brith Israël</th></tr>
+  <tr><td class="gn">1°</td><td><strong>Apprenti</strong><br><span class="myt">Entrée dans le Temple</span></td><td><strong>Apprenti</strong><br><span class="myt">Accent chrétien</span></td><td><strong>Apprenti</strong><br><span class="myt">Rationaliste</span></td><td><strong>Apprenti</strong><br><span class="myt">Mystères égyptiens</span></td><td class="bi"><strong>Oved (עובד)</strong><br><span class="myt">Malkuth — La Chute Adamique</span></td></tr>
+  <tr><td class="gn">2°</td><td><strong>Compagnon</strong><br><span class="myt">Voyage, 5 sens</span></td><td><strong>Compagnon</strong><br><span class="myt">Symbolisme chrétien</span></td><td><strong>Compagnon</strong><br><span class="myt">Connaissance</span></td><td><strong>Compagnon</strong><br><span class="myt">Isis et Osiris</span></td><td class="bi"><strong>Boneh (בונה)</strong><br><span class="myt">Hod — Le Baluchon</span></td></tr>
+  <tr><td class="gn">3°</td><td><strong>Maître</strong><br><span class="myt">Mort d'Hiram</span></td><td><strong>Maître</strong><br><span class="myt">Hiram + Christ</span></td><td><strong>Maître</strong><br><span class="myt">Hiram symbolique</span></td><td><strong>Maître</strong><br><span class="myt">Hiram + Osiris</span></td><td class="bi"><strong>Adon (אדון)</strong><br><span class="myt">Netzach — La Tunique de Joseph</span></td></tr>
+</table>
+</div>
+<div class="alert a-green">✓ <strong>SIMILITUDES :</strong> Structure en 3 grades, symbolique du Temple, outils du maçon opératif.</div>
+<div class="alert a-red">✗ <strong>DIFFÉRENCES :</strong> Brith Israël = structure kabbalistique unique (Sephiroth) + mythe de Joseph (pas Hiram).</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     SYMBOLES
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-symboles">
+<div class="page-hero"><div class="page-heb">סמלים קדושים</div><h2 class="page-title">Symboles Sacrés</h2></div>
+<div class="sec-block">
+<p class="prose">La Franc-Maçonnerie se définit comme un « <strong>système de morale voilé d'allégories et illustré par des symboles</strong> ». Les symboles du Rite Brith Israël sont issus de la tradition hébraïque et kabbalistique.</p>
+<div class="sym-row">
+  <div class="sym-it" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_b984e6dc15334e87acedf1867f835753~mv2.jpeg','מנורה — La Menorah')"><div class="sym-ico"><img src="https://static.wixstatic.com/media/73e6ef_fe3d1f47597441c6baff04fb7060048c~mv2.png" alt="Menorah"></div><p class="sym-n">Menorah</p><p class="sym-h">מנורה</p></div>
+  <div class="sym-it" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_871f56195ea14b67bc4a7b12bc46fdea~mv2.jpeg','מגן דוד — Magen David')"><div class="sym-ico"><img src="https://static.wixstatic.com/media/73e6ef_871f56195ea14b67bc4a7b12bc46fdea~mv2.jpeg" alt="Magen David"></div><p class="sym-n">Magen David</p><p class="sym-h">מגן דוד</p></div>
+  <div class="sym-it" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_1f7492c2708d44248fb71b0c612c80d2~mv2.png','לוחות — Les Tables')"><div class="sym-ico"><img src="https://static.wixstatic.com/media/73e6ef_1f7492c2708d44248fb71b0c612c80d2~mv2.png" alt="Tables"></div><p class="sym-n">Tables</p><p class="sym-h">לוחות</p></div>
+  <div class="sym-it" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_c4c367fc6e86407eacb636cc2d6cc202~mv2.png','עץ החיים — Arbre de Vie')"><div class="sym-ico"><img src="https://static.wixstatic.com/media/73e6ef_c4c367fc6e86407eacb636cc2d6cc202~mv2.png" alt="Arbre de Vie"></div><p class="sym-n">Arbre de Vie</p><p class="sym-h">עץ החיים</p></div>
+  <div class="sym-it" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_7e788b0b65e748ee92da471bb461497d~mv2.jpg','שופר — Le Shofar')"><div class="sym-ico"><img src="https://static.wixstatic.com/media/73e6ef_763b37940013468db7d1202c80279064~mv2.png" alt="Shofar"></div><p class="sym-n">Shofar</p><p class="sym-h">שופר</p></div>
+</div>
+<div class="cgrid c2" style="margin-top:17px">
+  <div class="card" style="cursor:pointer" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_b984e6dc15334e87acedf1867f835753~mv2.jpeg','מנורה — La Menorah')"><div class="ctitle">מנורה — La Menorah</div><img src="https://static.wixstatic.com/media/73e6ef_b984e6dc15334e87acedf1867f835753~mv2.jpeg" alt="Menorah" style="width:100%;max-height:175px;object-fit:contain;border-radius:5px;margin-bottom:8px"><p class="cbody">Le chandelier à sept branches symbolise la <strong>Lumière Divine</strong> qui éclaire les sept jours de la Création. Ses branches représentent les sept Sephiroth inférieures de l'Arbre de Vie.</p></div>
+  <div class="card" style="cursor:pointer" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_871f56195ea14b67bc4a7b12bc46fdea~mv2.jpeg','מגן דוד')"><div class="ctitle">מגן דוד — Le Maguen David</div><img src="https://static.wixstatic.com/media/73e6ef_871f56195ea14b67bc4a7b12bc46fdea~mv2.jpeg" alt="Maguen David" style="width:100%;max-height:175px;object-fit:contain;border-radius:5px;margin-bottom:8px"><p class="cbody">L'étoile à six branches symbolise l'<strong>union du Ciel et de la Terre</strong>, du masculin et du féminin, du feu et de l'eau. Elle représente l'harmonie des contraires — le sceau de l'Alliance.</p></div>
+  <div class="card" style="cursor:pointer" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_1f7492c2708d44248fb71b0c612c80d2~mv2.png','לוחות — Les Tables de la Loi')"><div class="ctitle">לוחות — Les Tables de la Loi</div><img src="https://static.wixstatic.com/media/73e6ef_1f7492c2708d44248fb71b0c612c80d2~mv2.png" alt="Tables" style="width:100%;max-height:175px;object-fit:contain;border-radius:5px;margin-bottom:8px"><p class="cbody">Les deux Tables portant les Dix Commandements représentent l'<strong>Alliance du Sinaï</strong>. Elles symbolisent la Loi morale universelle gravée dans le cœur de chaque être humain.</p></div>
+  <div class="card" style="cursor:pointer" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_c4c367fc6e86407eacb636cc2d6cc202~mv2.png','עץ החיים — L Arbre de Vie')"><div class="ctitle">עץ החיים — L'Arbre de Vie</div><img src="https://static.wixstatic.com/media/73e6ef_c4c367fc6e86407eacb636cc2d6cc202~mv2.png" alt="Arbre de Vie" style="width:100%;max-height:175px;object-fit:contain;border-radius:5px;margin-bottom:8px"><p class="cbody">Symbole central de la Kabbale : <strong>dix cercles (les Séphiroth) reliés par vingt-deux lignes (les Sentiers)</strong>. C'est notre <strong>Tableau Unique</strong>. Simple en apparence, infini en profondeur.</p></div>
+  <div class="card" style="cursor:pointer" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_7e788b0b65e748ee92da471bb461497d~mv2.jpg','שופר — Le Shofar')"><div class="ctitle">שופר — Le Shofar</div><img src="https://static.wixstatic.com/media/73e6ef_7e788b0b65e748ee92da471bb461497d~mv2.jpg" alt="Shofar" style="width:100%;max-height:175px;object-fit:contain;border-radius:5px;margin-bottom:8px"><p class="cbody">La corne de bélier appelle au <strong>réveil spirituel</strong>. Son son puissant traversa les murailles de Jéricho. Dans nos rituels, le Shofar convoque les Frères et Sœurs à l'éveil de la conscience.</p></div>
+  <div class="card"><div class="ctitle">Les Outils du Bâtisseur</div><p class="cbody" style="margin-top:8px"><strong>L'équerre</strong> enseigne la droiture. <strong>Le compas</strong> enseigne la mesure. <strong>Le niveau</strong> enseigne l'égalité. <strong>Le ciseau et le maillet</strong> servent à tailler la pierre brute que nous sommes.</p></div>
+</div>
+<div class="card" style="margin-top:13px;text-align:center"><div class="ctitle">L'Alphabet Sacré</div><p class="cbody">L'alphabet hébraïque n'est pas un alphabet ordinaire. Dans la tradition kabbalistique, <strong>les lettres sont les outils avec lesquels Dieu a créé le monde</strong>. Les 22 lettres correspondent aux 22 Sentiers de l'Arbre de Vie — et aux degrés 11 à 32 de notre Rite.</p></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     DÉCORS
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-decors">
+<div class="page-hero"><div class="page-heb">תכשיטים</div><h2 class="page-title">Les Décors</h2></div>
+<div class="sec-block">
+<p class="prose">Les décors du Rite Brith Israël présentent des caractéristiques uniques qui les distinguent des autres rites maçonniques.</p>
+<div class="cgrid c3">
+  <div class="card"><div class="ctitle" style="text-align:center">Tablier Unique</div><p class="cbody" style="text-align:center">Un seul tablier de Maître est porté du <strong>3° au 32° degré</strong>.</p></div>
+  <div class="card"><div class="ctitle" style="text-align:center">Sautoirs Distinctifs</div><p class="cbody" style="text-align:center">Seuls les <strong>sautoirs changent</strong> selon le degré. Chaque sautoir porte une couleur, une lettre hébraïque et un symbole.</p></div>
+  <div class="card"><div class="ctitle" style="text-align:center">Couvre-chef</div><p class="cbody" style="text-align:center">Les SS∴ et FF∴ sont <strong>couverts en Tenue</strong> (kippa ou couvre-chef). Tradition hébraïque du respect devant le Divin.</p></div>
+</div>
+<div class="divider"></div>
+<h3 style="text-align:center;color:var(--gold);font-family:var(--font-title);font-size:.82rem;letter-spacing:.11em;margin-bottom:13px">Galerie des Sautoirs</h3>
+<div class="sg" id="sautoir-gallery"></div>
+<div class="divider"></div>
+<h3 style="text-align:center;color:var(--gold);font-family:var(--font-title);font-size:.82rem;letter-spacing:.11em;margin:17px 0 13px">Tabliers et Cordon</h3>
+<div class="cgrid c2">
+  <div class="card" style="cursor:pointer;text-align:center" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_81fb0f4f63014a48aa086c9c0f5e45cd~mv2.jpg','Cordon de Maître')"><img src="https://static.wixstatic.com/media/73e6ef_81fb0f4f63014a48aa086c9c0f5e45cd~mv2.jpg" alt="Cordon" style="width:100%;max-height:220px;object-fit:contain;border:1px solid rgba(212,175,55,.26);border-radius:5px;margin-bottom:8px"><p style="font-family:var(--font-title);font-size:.71rem;color:var(--gold)">CORDON DE MAÎTRE</p><p style="font-size:.71rem;color:var(--gold-light)">Porté du 3° au 32°</p></div>
+  <div class="card" style="cursor:pointer;text-align:center" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_9aed686f25ed43fa97dc0712e57116b4~mv2.jpeg','Tablier de Maître')"><img src="https://static.wixstatic.com/media/73e6ef_9aed686f25ed43fa97dc0712e57116b4~mv2.jpeg" alt="Tablier" style="width:100%;max-height:220px;object-fit:contain;border:1px solid rgba(212,175,55,.26);border-radius:5px;margin-bottom:8px"><p style="font-family:var(--font-title);font-size:.71rem;color:var(--gold)">TABLIER DE MAÎTRE</p><p style="font-size:.71rem;color:var(--gold-light)">Unique du 3° au 32°</p></div>
+  <div class="card" style="cursor:pointer;text-align:center;border-color:rgba(212,175,55,.36)" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_05fa6d65f2f144229c0e581ab7d13873~mv2.jpeg','Sautoir du SGC 33°')"><img src="https://static.wixstatic.com/media/73e6ef_05fa6d65f2f144229c0e581ab7d13873~mv2.jpeg" alt="SGC Sautoir" style="width:100%;max-height:220px;object-fit:contain;border:1px solid rgba(212,175,55,.42);border-radius:5px;margin-bottom:8px"><p style="font-family:var(--font-title);font-size:.71rem;color:#FFD700">SAUTOIR DU SGC 33°</p><p style="font-size:.71rem;color:var(--gold-light)">Sautoir d'apparat du Souverain Grand Commandeur</p></div>
+  <div class="card" style="cursor:pointer;text-align:center;border-color:rgba(212,175,55,.36)" onclick="lbOpen('https://static.wixstatic.com/media/73e6ef_5ac7acb3fdb940f38b9940efd106d0b8~mv2.jpeg','Tablier du SGC 33°')"><img src="https://static.wixstatic.com/media/73e6ef_5ac7acb3fdb940f38b9940efd106d0b8~mv2.jpeg" alt="SGC Tablier" style="width:100%;max-height:220px;object-fit:contain;border:1px solid rgba(212,175,55,.42);border-radius:5px;margin-bottom:8px"><p style="font-family:var(--font-title);font-size:.71rem;color:#FFD700">TABLIER DU SGC 33°</p><p style="font-size:.71rem;color:var(--gold-light)">Tablier d'apparat du Souverain Grand Commandeur</p></div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     SOURCES
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-sources">
+<div class="page-hero"><div class="page-heb">מקורות וביבליוגרפיה</div><h2 class="page-title">Sources & Bibliographie</h2></div>
+<div class="sec-block">
+<div class="alert a-gold"><h4>Un Rite entièrement vérifiable</h4><p>Le Rite Brith Israël repose sur des <strong>sources authentiques et vérifiables</strong>. Chaque élément de notre tradition peut être retracé jusqu'à ses sources.</p></div>
+<div class="cgrid c2">
+  <div class="card"><div class="ctitle">Sources Bibliques (Tanakh)</div><ul class="src-ul"><li>Bereshit (Genèse)</li><li>Shemot (Exode)</li><li>Vayiqra (Lévitique)</li><li>Bamidbar (Nombres)</li><li>Devarim (Deutéronome)</li><li>Yirmeyahu (Jérémie)</li><li>Tehilim (Psaumes)</li><li>Mishlei (Proverbes)</li></ul></div>
+  <div class="card"><div class="ctitle">Sources Kabbalistiques</div><ul class="src-ul"><li>Sefer Yetzirah (Livre de la Formation)</li><li>Sefer HaZohar (Livre de la Splendeur)</li><li>Etz Hayim — Rabbi Isaac Luria</li><li>Sefer HaBahir (Livre de la Clarté)</li><li>Pardes Rimonim — Rabbi Moïse Cordovero</li><li>École de Safed (XVIe siècle)</li></ul></div>
+  <div class="card"><div class="ctitle">Sources Maçonniques</div><ul class="src-ul"><li>Constitutions d'Anderson (1723)</li><li>Anciens Devoirs (Old Charges)</li><li>René Guénon — Symboles de la Science Sacrée</li><li>Oswald Wirth — Le Symbolisme Hermétique</li><li>Jules Boucher — La Symbolique Maçonnique</li><li>Jean Tourniac — Principes du Rite Écossais</li></ul></div>
+  <div class="card"><div class="ctitle">Sources Historiques</div><ul class="src-ul"><li>Flavius Josèphe — Antiquités Judaïques</li><li>Mishna et Talmud — Traité Middot</li><li>Rashi (1040-1105)</li><li>Maimonide (1135-1204) — Guide des Égarés</li><li>Gershom Scholem — Mystique Juive</li><li>Moshe Idel — Kabbalah: New Perspectives</li></ul></div>
+  <div class="card"><div class="ctitle">Sources Linguistiques</div><ul class="src-ul"><li>Brown-Driver-Briggs Hebrew Lexicon</li><li>Jastrow Dictionary</li><li>Even-Shoshan Dictionary</li><li>Gesenius' Hebrew Grammar</li><li>Prononciation séfarade traditionnelle</li></ul></div>
+  <div class="card"><div class="ctitle">Sources Philosophiques</div><ul class="src-ul"><li>Voltaire — Traité sur la Tolérance</li><li>Jean-Jacques Rousseau — Du Contrat Social</li><li>Lois Noachides — Code éthique universel</li><li>Déclaration Universelle des Droits de l'Homme</li></ul></div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     TRAITÉS INTERNATIONAUX
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-traites">
+<div class="page-hero"><div class="page-heb">אחוות עולם</div><h2 class="page-title">Traités d'Amitié & de Reconnaissance</h2></div>
+<div class="sec-block">
+<p class="prose" style="text-align:center;font-style:italic;color:var(--gold-light)">Liens fraternels établis entre le Suprême Conseil de l'Ordre Mondial du Rite Brith Israël et les puissances maçonniques du monde.</p>
+
+<!-- COMPTEUR -->
+<div class="traites-banner">
+  <span class="traites-count" id="traite-count">7</span>
+  <span class="traites-count-label">Traités signés · Fraternité Universelle</span>
+  <div style="margin-top:10px;font-size:.78rem;color:rgba(212,175,55,.45);font-family:var(--font-title);letter-spacing:.08em">FRANCE · BELGIQUE · SUISSE · ITALIE · ESPAGNE · MAROC · CANADA · ISRAËL · AUSTRALIE</div>
+</div>
+
+<!-- CARTE MONDE SVG INTERACTIVE -->
+<div class="map-wrap">
+  <svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+    <rect width="1000" height="480" fill="#060a14"/>
+    <!-- Grille -->
+    <g stroke="rgba(212,175,55,.05)" stroke-width="1">
+      <line x1="0" y1="160" x2="1000" y2="160"/><line x1="0" y1="240" x2="1000" y2="240"/><line x1="0" y1="320" x2="1000" y2="320"/>
+      <line x1="250" y1="0" x2="250" y2="480"/><line x1="500" y1="0" x2="500" y2="480"/><line x1="750" y1="0" x2="750" y2="480"/>
+    </g>
+    <!-- Continents -->
+    <path d="M460,88 L492,83 L512,87 L527,94 L532,110 L522,126 L511,131 L506,147 L496,152 L484,140 L468,134 L453,124 L448,108 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M474,63 L491,58 L496,74 L485,84 L471,79 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M442,83 L453,80 L456,94 L448,99 L441,93 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M451,123 L469,118 L474,139 L458,147 L446,139 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M443,148 L562,146 L572,168 L552,194 L490,198 L443,183 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M458,198 L552,196 L562,238 L542,294 L511,309 L489,294 L458,248 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M528,128 L577,123 L587,148 L566,163 L534,158 L523,146 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M508,48 L702,43 L722,78 L712,108 L680,118 L622,113 L571,98 L540,83 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M588,128 L671,123 L681,168 L651,198 L615,193 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M683,88 L782,83 L802,113 L781,133 L731,138 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M758,278 L832,268 L852,308 L822,333 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M98,68 L242,63 L262,98 L257,138 L231,163 L190,168 L140,153 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+    <path d="M183,213 L262,208 L277,268 L252,328 L211,353 Z" fill="rgba(35,50,80,.65)" stroke="rgba(212,175,55,.18)" stroke-width=".6"/>
+
+    <!-- ÉPINGLES — France (cluster) -->
+    <g class="map-pin" data-id="fmigs" onclick="showTraiteDetail('fmigs')" style="cursor:pointer">
+      <circle cx="469" cy="113" r="11" fill="rgba(212,175,55,.14)" stroke="var(--gold)" stroke-width="1.5" class="pin-ring"/>
+      <circle cx="469" cy="113" r="5" fill="var(--gold)" class="pin-dot"/>
+      <text x="469" y="106" text-anchor="middle" fill="var(--gold)" font-size="7.5" font-family="Cinzel,serif">FMIGS</text>
+    </g>
+    <g class="map-pin" data-id="kilwinning" onclick="showTraiteDetail('kilwinning')" style="cursor:pointer">
+      <circle cx="449" cy="88" r="11" fill="rgba(212,175,55,.14)" stroke="var(--gold)" stroke-width="1.5" class="pin-ring"/>
+      <circle cx="449" cy="88" r="5" fill="var(--gold)" class="pin-dot"/>
+      <text x="449" y="81" text-anchor="middle" fill="var(--gold)" font-size="7.5" font-family="Cinzel,serif">KW</text>
+    </g>
+    <g class="map-pin" data-id="imu" onclick="showTraiteDetail('imu')" style="cursor:pointer">
+      <circle cx="480" cy="120" r="9" fill="rgba(212,175,55,.1)" stroke="rgba(212,175,55,.7)" stroke-width="1" class="pin-ring"/>
+      <circle cx="480" cy="120" r="4" fill="rgba(212,175,55,.8)" class="pin-dot"/>
+    </g>
+    <!-- Belgique -->
+    <g class="map-pin" data-id="belgique" onclick="showTraiteDetail('belgique')" style="cursor:pointer">
+      <circle cx="468" cy="98" r="9" fill="rgba(212,175,55,.1)" stroke="rgba(212,175,55,.65)" stroke-width="1" class="pin-ring"/>
+      <circle cx="468" cy="98" r="4" fill="rgba(212,175,55,.75)" class="pin-dot"/>
+      <text x="468" y="91" text-anchor="middle" fill="rgba(212,175,55,.75)" font-size="7" font-family="serif">BE</text>
+    </g>
+    <!-- Suisse -->
+    <g class="map-pin" data-id="suisse" onclick="showTraiteDetail('suisse')" style="cursor:pointer">
+      <circle cx="477" cy="108" r="9" fill="rgba(212,175,55,.1)" stroke="rgba(212,175,55,.65)" stroke-width="1" class="pin-ring"/>
+      <circle cx="477" cy="108" r="4" fill="rgba(212,175,55,.75)" class="pin-dot"/>
+      <text x="477" y="101" text-anchor="middle" fill="rgba(212,175,55,.75)" font-size="7" font-family="serif">CH</text>
+    </g>
+    <!-- Italie -->
+    <g class="map-pin" data-id="italie" onclick="showTraiteDetail('italie')" style="cursor:pointer">
+      <circle cx="491" cy="123" r="9" fill="rgba(212,175,55,.1)" stroke="rgba(212,175,55,.65)" stroke-width="1" class="pin-ring"/>
+      <circle cx="491" cy="123" r="4" fill="rgba(212,175,55,.75)" class="pin-dot"/>
+      <text x="491" y="116" text-anchor="middle" fill="rgba(212,175,55,.75)" font-size="7" font-family="serif">IT</text>
+    </g>
+    <!-- Espagne -->
+    <g class="map-pin" data-id="espagne" onclick="showTraiteDetail('espagne')" style="cursor:pointer">
+      <circle cx="457" cy="133" r="9" fill="rgba(212,175,55,.1)" stroke="rgba(212,175,55,.65)" stroke-width="1" class="pin-ring"/>
+      <circle cx="457" cy="133" r="4" fill="rgba(212,175,55,.75)" class="pin-dot"/>
+      <text x="457" y="126" text-anchor="middle" fill="rgba(212,175,55,.75)" font-size="7" font-family="serif">ES</text>
+    </g>
+    <!-- Maroc -->
+    <g class="map-pin" data-id="maroc" onclick="showTraiteDetail('maroc')" style="cursor:pointer">
+      <circle cx="454" cy="160" r="9" fill="rgba(212,175,55,.1)" stroke="rgba(212,175,55,.65)" stroke-width="1" class="pin-ring"/>
+      <circle cx="454" cy="160" r="4" fill="rgba(212,175,55,.75)" class="pin-dot"/>
+      <text x="454" y="153" text-anchor="middle" fill="rgba(212,175,55,.75)" font-size="7" font-family="serif">MA</text>
+    </g>
+    <!-- Israël -->
+    <g class="map-pin" data-id="israel" onclick="showTraiteDetail('israel')" style="cursor:pointer">
+      <circle cx="547" cy="143" r="11" fill="rgba(60,120,220,.18)" stroke="#5599ee" stroke-width="1.5" class="pin-ring"/>
+      <circle cx="547" cy="143" r="5" fill="#5599ee" class="pin-dot"/>
+      <text x="547" y="136" text-anchor="middle" fill="#8ab4ff" font-size="7" font-family="serif">IL</text>
+    </g>
+    <!-- Canada -->
+    <g class="map-pin" data-id="canada" onclick="showTraiteDetail('canada')" style="cursor:pointer">
+      <circle cx="174" cy="93" r="10" fill="rgba(212,175,55,.1)" stroke="rgba(212,175,55,.65)" stroke-width="1.2" class="pin-ring"/>
+      <circle cx="174" cy="93" r="4" fill="rgba(212,175,55,.75)" class="pin-dot"/>
+      <text x="174" y="86" text-anchor="middle" fill="rgba(212,175,55,.75)" font-size="7" font-family="serif">CA</text>
+    </g>
+    <!-- Australie -->
+    <g class="map-pin" data-id="australie" onclick="showTraiteDetail('australie')" style="cursor:pointer">
+      <circle cx="802" cy="308" r="10" fill="rgba(212,175,55,.1)" stroke="rgba(212,175,55,.65)" stroke-width="1.2" class="pin-ring"/>
+      <circle cx="802" cy="308" r="4" fill="rgba(212,175,55,.75)" class="pin-dot"/>
+      <text x="802" y="301" text-anchor="middle" fill="rgba(212,175,55,.75)" font-size="7" font-family="serif">AU</text>
+    </g>
+
+    <!-- Légende -->
+    <g transform="translate(14,448)">
+      <circle cx="6" cy="6" r="5" fill="var(--gold)" opacity=".9"/>
+      <text x="15" y="10" fill="rgba(212,175,55,.75)" font-size="8.5" font-family="serif">Traité signé</text>
+      <circle cx="80" cy="6" r="5" fill="#5599ee" opacity=".9"/>
+      <text x="89" y="10" fill="rgba(130,180,255,.75)" font-size="8.5" font-family="serif">En négociation</text>
+      <text x="175" y="10" fill="rgba(212,175,55,.4)" font-size="8.5" font-family="serif">— Cliquer sur une épingle</text>
+    </g>
+  </svg>
+  <!-- TOOLTIP -->
+  <div id="map-tooltip">
+    <div id="tt-title" style="font-family:var(--font-title);color:var(--gold);margin-bottom:3px;font-size:.78rem"></div>
+    <div id="tt-pays" style="color:var(--silver);font-size:.72rem"></div>
+  </div>
+</div>
+
+<!-- PANNEAU DÉTAIL -->
+<div class="t-detail" id="traite-detail">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:11px;margin-bottom:13px">
+    <div>
+      <span id="td-badge" style="display:inline-block;font-family:var(--font-title);font-size:.62rem;padding:3px 10px;border-radius:20px;margin-bottom:5px;color:var(--midnight);background:var(--gold)"></span>
+      <h3 id="td-nom" style="font-family:var(--font-title);color:var(--gold);font-size:1rem;margin-bottom:3px"></h3>
+      <p id="td-pays" style="color:var(--silver);font-size:.8rem"></p>
+    </div>
+    <button onclick="document.getElementById('traite-detail').classList.remove('show')" style="background:none;border:1px solid rgba(212,175,55,.38);color:var(--gold);border-radius:50%;width:26px;height:26px;cursor:pointer;flex-shrink:0;font-size:.95rem">×</button>
+  </div>
+  <p id="td-desc" style="font-size:.87rem;line-height:1.62;color:var(--parchment);margin-bottom:11px"></p>
+  <div style="display:flex;flex-wrap:wrap;gap:9px;font-size:.76rem">
+    <span id="td-date" style="color:var(--gold-light)"></span>
+    <span id="td-sgc" style="color:var(--silver)"></span>
+  </div>
+</div>
+
+<!-- GRID CARDS TRAITÉS -->
+<h3 style="font-family:var(--font-title);color:var(--gold);font-size:.85rem;letter-spacing:.1em;margin-bottom:18px;text-align:center">OBÉDIENCES PARTENAIRES</h3>
+<div class="traites-grid" id="traites-grid"></div>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PUBLICATIONS
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-publications">
+<div class="page-hero"><div class="page-heb">פרסומים</div><h2 class="page-title">Publications</h2></div>
+<div class="sec-block">
+<p class="prose">Découvrez les ouvrages officiels du Rite Brith Israël®. Ces publications sont le fruit d'années de recherche et de pratique initiatique.</p>
+<div class="cgrid c2">
+  <div class="card" style="text-align:center;position:relative;overflow:hidden">
+    <div style="position:absolute;top:8px;right:-26px;background:var(--gold);color:var(--midnight);font-family:var(--font-title);font-size:.47rem;font-weight:700;padding:3px 32px;transform:rotate(45deg);letter-spacing:.09em">AMAZON</div>
+    <img src="https://static.wixstatic.com/media/73e6ef_4413f119047743d582d61d15c7e39d57~mv2.png" alt="Guide de Survie" style="width:85px;height:125px;object-fit:cover;border:2px solid rgba(212,175,55,.38);border-radius:4px;margin-bottom:9px">
+    <div class="ctitle">Guide de Survie pour Franc-Maçon Désemparé</div>
+    <p style="font-size:.78rem;color:var(--gold-light);font-style:italic;margin-bottom:6px">Mickaël DARMON</p>
+    <p class="cbody" style="margin-bottom:9px">Démystification, résilience et sagesse maçonnique au quotidien. Accessible à tous.</p>
+    <a href="https://amzn.eu/d/03LwhX1a" target="_blank" class="btn btn-g">Commander sur Amazon</a>
+  </div>
+  <div class="card" style="text-align:center;position:relative;overflow:hidden">
+    <div style="position:absolute;top:8px;right:-26px;background:var(--gold);color:var(--midnight);font-family:var(--font-title);font-size:.47rem;font-weight:700;padding:3px 32px;transform:rotate(45deg);letter-spacing:.09em">NOUVEAU</div>
+    <img src="https://static.wixstatic.com/media/73e6ef_1b6d8e697d134d5080cf52dc0e33143e~mv2.png" alt="L'Alliance" style="width:85px;height:125px;object-fit:cover;border:2px solid rgba(212,175,55,.38);border-radius:4px;margin-bottom:9px">
+    <div class="ctitle">L'Alliance</div>
+    <p style="font-size:.78rem;color:var(--gold-light);font-style:italic;margin-bottom:6px">Mickaël DARMON</p>
+    <p class="cbody" style="margin-bottom:9px">Fondements spirituels et philosophiques du Rite Brith Israël. 30 €</p>
+    <a href="https://www.coollibri.com/bibliotheque-en-ligne/mickael-darmon/brith-israel-lalliance-de-lumiere_1428718" target="_blank" class="btn btn-g">Commander</a>
+  </div>
+  <div class="card" style="text-align:center">
+    <img src="https://static.wixstatic.com/media/73e6ef_adcf14536545488fbfabe53783c3d222~mv2.jpeg" alt="Tome I" style="width:85px;height:125px;object-fit:cover;border:2px solid rgba(212,175,55,.38);border-radius:4px;margin-bottom:9px">
+    <div class="ctitle">Tome I — Grades Symboliques</div>
+    <p style="font-size:.78rem;color:var(--gold-light);font-style:italic;margin-bottom:6px">Rituels officiels · 280 pages</p>
+    <p class="cbody" style="margin-bottom:9px">Rituels complets et commentés des trois premiers degrés. 40 €</p>
+    <a href="mailto:contact.brith.israel@gmail.com" class="btn btn-o">Réservé aux FM</a>
+  </div>
+  <div class="card" style="text-align:center">
+    <div style="width:85px;height:125px;margin:0 auto 9px;border:2px dashed rgba(212,175,55,.22);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:2rem;opacity:.4">📚</div>
+    <div class="ctitle">Collection en préparation</div>
+    <p class="cbody" style="margin-bottom:9px"><strong>Tome II</strong> — Grades de Perfection (4°-10°)<br><strong>Tome III</strong> — Grades Capitulaires (11°-18°)<br><strong>Tomes IV-V</strong> — Grades Philosophiques & Administratifs</p>
+    <p style="font-size:.72rem;color:var(--silver);font-style:italic">Publication progressive selon l'avancement des travaux</p>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     OUVRIR UNE LOGE
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-ouvrir-loge">
+<div class="page-hero"><div class="page-heb">לפתוח לודג</div><h2 class="page-title">Ouvrir une Loge</h2></div>
+<div class="sec-block">
+<p class="prose">Le Rite Brith Israël se développe par la création de nouvelles Loges, appelées à essaimer la Lumière de notre tradition à travers le monde. Si vous êtes Maître Maçon et souhaitez fonder une Loge travaillant au Rite Brith Israël, cette section vous est destinée.</p>
+<div class="tbox" id="loge-locked">
+  <h3>🔐 Tuilage — Réservé aux Maîtres Maçons</h3>
+  <form id="tuilage-loge" onsubmit="return checkTuilage(event,'loge')">
+    <div class="tq"><label>Quel âge avez-vous ?</label><input type="text" id="ql1"></div>
+    <div class="tq"><label>D'où venez-vous ?</label><input type="text" id="ql2"></div>
+    <div class="tq"><label>Que venez-vous faire ici ?</label><input type="text" id="ql3"></div>
+    <button type="submit" class="tsub">Vérifier</button>
+  </form>
+  <div class="t-err" id="terr-loge">Réponses incorrectes. Rapprochez-vous de votre Loge.</div>
+</div>
+<div class="fm-c" id="loge-unlocked">
+  <div class="cgrid c2">
+    <div class="card"><div class="ctitle">Conditions</div><p class="cbody">Réunir au minimum <strong>7 Maîtres Maçons réguliers</strong>, dont au moins un formé au Rite Brith Israël ou s'engageant à suivre la formation dispensée par le Suprême Conseil.</p></div>
+    <div class="card"><div class="ctitle">💰 Cotisations</div><p class="cbody"><strong>Patente :</strong> Gratuite sur dossier<br><strong>Capitation annuelle :</strong> 200€ par Loge + 50€ par membre<br><br>Ces contributions permettent le fonctionnement du Suprême Conseil.</p></div>
+  </div>
+  <div class="card" style="margin-top:13px;text-align:center"><div class="ctitle">Accompagnement</div><p class="cbody">Le Suprême Conseil accompagne chaque nouvelle Loge dans son installation. Un Grand Officier sera désigné pour présider la cérémonie d'Allumage des Feux. Les rituels officiels et la formation des Officiers sont assurés par le Suprême Conseil.</p></div>
+  <div class="cbox"><h3>Demande de Patente</h3><p style="margin:7px 0;color:var(--silver);font-size:.86rem">Contactez-nous pour ouvrir une Loge au Rite Brith Israël</p><a href="mailto:contact.brith.israel@gmail.com" class="btn btn-g">Faire une demande</a></div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     DEVENIR FM
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-devenir-fm">
+<div class="page-hero"><div class="page-heb">להיות בונה חופשי</div><h2 class="page-title">Devenir Franc-Maçon</h2></div>
+<div class="sec-block">
+<p class="prose">Tout cherchant sincère peut frapper à la porte du Rite Brith Israël. <strong>Vous n'avez pas besoin d'être juif</strong> — le Rite puise dans la tradition hébraïque, mais il s'adresse à tous.</p>
+<div class="cgrid c2">
+  <div class="card"><div class="ctitle">☰ Ce que nous demandons</div><p class="cbody"><strong>La croyance en un Principe Créateur</strong><br>Nous l'appelons le Grand Architecte de l'Univers. Chacun est libre de lui donner le nom qu'il souhaite.<br><br><strong>La sincérité de la démarche</strong><br>Nous cherchons des cherchants qui veulent travailler, pas des curieux qui veulent voir le spectacle.<br><br><strong>L'intégrité morale</strong><br>Un casier judiciaire chargé ou une réputation ternie sont des obstacles rédhibitoires.</p></div>
+  <div class="card"><div class="ctitle">× Ce que nous ne demandons pas</div><p class="cbody">— Être juif, d'origine juive ou de culture juive<br>— Parler ou comprendre l'hébreu<br>— Connaître la Kabbale ou la franc-maçonnerie<br>— Appartenir à une obédience particulière<br>— Être d'un genre, d'une nationalité ou d'une origine précise<br><br><em style="color:var(--gold-light)">Le Rite Brith Israël est un rite mixte, universel, ouvert à tous les croyants.</em></p></div>
+</div>
+<div class="cgrid c3" style="margin-top:13px">
+  <div class="card"><div class="ctitle">🔎 La Recherche</div><p class="cbody">Commencez par lire « <strong>L'Alliance</strong> » ou le <strong>Guide de Survie</strong>. Si ce livre résonne en vous, si vous vous retrouvez dans cette quête — alors vous avez peut-être frappé à la bonne porte.</p></div>
+  <div class="card"><div class="ctitle">✉ La Demande</div><p class="cbody">Écrivez-nous. Expliquez qui vous êtes, d'où vous venez, ce que vous cherchez. Il n'y a pas de bonne ou de mauvaise candidature — il y a des candidatures sincères et des candidatures de façade.</p></div>
+  <div class="card"><div class="ctitle">◈ L'Entretien</div><p class="cbody">Vous serez reçu par deux membres du Suprême Conseil pour un entretien. Ce n'est pas un interrogatoire — c'est une rencontre. Nous cherchons à vous connaître, et vous avez tout intérêt à nous connaître aussi.</p></div>
+</div>
+<div class="cbox" style="margin-top:18px"><h3>Frapper à la Porte</h3><p style="margin:7px 0;color:var(--silver);font-size:.86rem">Envoyez-nous votre demande. Nous vous répondons dans les 48 heures.</p><a href="mailto:contact.brith.israel@gmail.com" class="btn btn-g">Écrire au Suprême Conseil</a></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     ESPACE FM
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-espace-fm">
+<div class="page-hero"><div class="page-heb">מרחב הבונים החופשיים</div><h2 class="page-title">Espace FM</h2></div>
+<div class="sec-block">
+<div class="tbox" id="fm-locked">
+  <h3>🔐 Tuilage — Espace Réservé</h3>
+  <form id="tuilage-fm" onsubmit="return checkTuilage(event,'fm')">
+    <div class="tq"><label>Quel âge avez-vous ?</label><input type="text" id="qf1"></div>
+    <div class="tq"><label>D'où venez-vous ?</label><input type="text" id="qf2"></div>
+    <div class="tq"><label>Que venez-vous faire ici ?</label><input type="text" id="qf3"></div>
+    <button type="submit" class="tsub">Entrer</button>
+  </form>
+  <div class="t-err" id="terr-fm">Réponses incorrectes. Rapprochez-vous de votre Loge.</div>
+</div>
+<div class="fm-c" id="fm-unlocked">
+  <div class="alert a-gold"><h4>Bienvenue, Frère / Sœur</h4><p>Vous accédez à l'espace réservé aux membres initiés. Les documents disponibles ici sont strictement confidentiels.</p></div>
+  <div class="fm-doc"><span class="fm-doc-ico">📜</span><div class="fm-doc-info"><h5>Constitutions du Rite Brith Israël</h5><p>59 articles — 8 Titres — Version officielle 2025</p></div><a href="https://73e6ef7e-6675-4397-9c8c-463a6c2673b4.usrfiles.com/ugd/73e6ef_28ee3807bcbf4bd4841757fd65aaeb90.pdf" target="_blank" class="fm-doc-btn">Télécharger</a></div>
+  <div class="fm-doc"><span class="fm-doc-ico">📖</span><div class="fm-doc-info"><h5>Tome I — Grades Symboliques</h5><p>Rituels complets 1°, 2°, 3° — 280 pages</p></div><a href="mailto:contact.brith.israel@gmail.com" class="fm-doc-btn">Demander</a></div>
+  <div class="fm-doc"><span class="fm-doc-ico">🏛</span><div class="fm-doc-info"><h5>Tableau de Loge</h5><p>Tableau unique — Arbre de Vie complet</p></div><a href="https://static.wixstatic.com/media/73e6ef_2021548aa1ff4a32a1ecc5ff7f399cc1~mv2.jpeg" target="_blank" class="fm-doc-btn">Voir</a></div>
+  <div class="fm-doc"><span class="fm-doc-ico">🎵</span><div class="fm-doc-info"><h5>Shofar — Son rituel</h5><p>Fichier audio officiel pour les Tenues</p></div><audio controls style="height:26px;flex:1"><source src="https://static.wixstatic.com/mp3/73e6ef_f5691c0dd7e744f49b3e1598ee98ada6.mp3" type="audio/mp3"></audio></div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CONTACT
+═══════════════════════════════════ -->
+<div class="tab-pane" id="pane-contact">
+<div class="page-hero"><div class="page-heb">צור קשר</div><h2 class="page-title">Contact</h2></div>
+<div class="sec-block" style="max-width:500px;margin:0 auto">
+<div class="cbox">
+  <h3>Suprême Conseil du Rite Brith Israël®</h3>
+  <p style="margin:8px 0;color:var(--silver);font-size:.86rem">Pour toute demande : adhésion, information, partenariat, presse</p>
+  <a href="mailto:contact.brith.israel@gmail.com" class="btn btn-g" style="margin:9px auto;display:inline-flex">✉ contact.brith.israel@gmail.com</a>
+  <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.18),transparent);margin:14px 0"></div>
+  <p style="font-size:.8rem;color:var(--silver);margin-bottom:8px">Retrouvez-nous sur les réseaux :</p>
+  <a href="https://www.facebook.com/profile.php?id=61586037824874" target="_blank" class="btn btn-o" style="margin:3px auto;display:inline-flex;font-size:.67rem">Facebook — Suprême Conseil RBI</a>
+</div>
+<div class="card" style="margin-top:17px">
+  <div class="ctitle">Mentions légales</div>
+  <p class="cbody" style="font-size:.8rem">
+    <strong>Dénomination :</strong> Rite Brith Israël®<br>
+    <strong>Statut :</strong> Association cultuelle et initiatique<br>
+    <strong>Siège :</strong> France<br>
+    <strong>Fondateur :</strong> Mickaël DARMON<br>
+    <strong>Responsable éditorial :</strong> Mickaël DARMON, Souverain Grand Commandeur 33°<br>
+    <strong>Email :</strong> contact.brith.israel@gmail.com<br>
+    <strong>Site :</strong> www.brith-israel.org<br><br>
+    <em style="color:var(--silver);font-size:.76rem">Le nom "Brith Israël®" et l'ensemble des textes, rituels, règlements et visuels constituent une œuvre protégée. Toute reproduction, même partielle, sans autorisation écrite est interdite. © 2025 Rite Brith Israël®</em>
+  </p>
+</div>
+</div>
+</div>
+
+  </div><!-- /content-wrap -->
+
+  <!-- BARRE SHOFAR -->
+  <div class="music-bar" id="musicBar">
+    <span class="music-lbl">🕯 שופר</span>
+    <audio controls id="audioShofar" style="height:27px;flex:1;min-width:0">
+      <source src="https://static.wixstatic.com/mp3/73e6ef_f5691c0dd7e744f49b3e1598ee98ada6.mp3" type="audio/mp3">
+    </audio>
+    <span class="music-x" onclick="document.getElementById('musicBar').style.display='none'" title="Fermer">×</span>
+  </div>
+</div><!-- /main-wrap -->
+</div><!-- /app -->
+
+<script>
+// ═══════════════════ ÉTOILES ═══════════════════
+(function(){
+  const c=document.getElementById('bgStars');
+  for(let i=0;i<110;i++){
+    const s=document.createElement('div');s.className='star';
+    const sz=Math.random()*2.4+0.4;
+    s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${3+Math.random()*7}s;--dl:${Math.random()*9}s;--op:${0.15+Math.random()*0.7}`;
+    c.appendChild(s);
+  }
+})();
+
+// ═══════════════════ NAVIGATION ═══════════════════
+const TAB_LABELS={
+  'accueil':'Accueil','presentation':'Présentation','valeurs':'Valeurs',
+  'commandeur':"Chefs de l'Ordre",'supreme-conseil':'Suprême Conseil','degres':'33 Degrés',
+  'comparatif':'Comparatif Rites','symboles':'Symboles','decors':'Décors','sources':'Sources',
+  'traites':'Traités Internationaux','publications':'Publications',
+  'ouvrir-loge':'Ouvrir une Loge','devenir-fm':'Devenir FM',
+  'espace-fm':'Espace FM','contact':'Contact'
+};
+
+function showTab(id){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  const pane=document.getElementById('pane-'+id);
+  if(pane){pane.classList.add('active');pane.scrollTop=0;}
+  const nav=document.querySelector('[data-tab="'+id+'"]');
+  if(nav){nav.classList.add('active');nav.scrollIntoView({block:'nearest',behavior:'smooth'});}
+  document.getElementById('bcCurrent').textContent=TAB_LABELS[id]||id;
+  closeSB();
+  history.replaceState(null,'','#'+id);
+}
+
+window.addEventListener('load',function(){
+  const h=location.hash.replace('#','');
+  if(h&&document.getElementById('pane-'+h))showTab(h);
+  buildSautoirs();
+  buildTraites();
+  initScrollTop();
+  restoreTuilage();
+  const sl=localStorage.getItem('rbi_lang');
+  if(sl)setLang(sl);
+});
+
+// ═══════════════════ SIDEBAR ═══════════════════
+function toggleSB(){
+  const sb=document.getElementById('sidebar');
+  const ov=document.getElementById('sbOverlay');
+  const bg=document.getElementById('burgerBtn');
+  sb.classList.toggle('open');ov.classList.toggle('on');bg.classList.toggle('open');
+}
+function closeSB(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sbOverlay').classList.remove('on');
+  const bg=document.getElementById('burgerBtn');
+  if(bg)bg.classList.remove('open');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSB();lbClose();}});
+
+// ═══════════════════ SCROLL TOP ═══════════════════
+function initScrollTop(){
+  const btn=document.getElementById('scrollTop');
+  document.querySelectorAll('.tab-pane').forEach(p=>{
+    p.addEventListener('scroll',function(){btn.classList.toggle('vis',p.scrollTop>280);});
+  });
+}
+function scrollToTop(){
+  const p=document.querySelector('.tab-pane.active');
+  if(p)p.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ═══════════════════ LIGHTBOX ═══════════════════
+let lbImgs=[],lbIdx=0;
+function lbOpen(src,cap){
+  document.getElementById('lb-img').src=src;
+  document.getElementById('lb-cap').textContent=cap||'';
+  document.getElementById('lb').classList.add('on');
+  lbImgs=[{src,cap}];lbIdx=0;
+  document.body.style.overflow='hidden';
+}
+function lbClose(){
+  document.getElementById('lb').classList.remove('on');
+  document.getElementById('lb-img').src='';
+  document.body.style.overflow='';
+}
+function lbNav(d){
+  if(!lbImgs.length)return;
+  lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;
+  document.getElementById('lb-img').src=lbImgs[lbIdx].src;
+  document.getElementById('lb-cap').textContent=lbImgs[lbIdx].cap||'';
+}
+document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)lbClose();});
+
+// ═══════════════════ SAUTOIRS ═══════════════════
+function buildSautoirs(){
+  const data=[
+    {deg:'4°',nom:'Maître Secret',heb:'ד',img:'https://static.wixstatic.com/media/73e6ef_49e59e5c38c0428bb7a7de9a8ba1e89c~mv2.jpeg'},
+    {deg:'5°',nom:'Maître Parfait',heb:'ה',img:'https://static.wixstatic.com/media/73e6ef_2a0a2bd1deaa4ab0ba01fa26e6b0ef91~mv2.jpeg'},
+    {deg:'6°',nom:'Secrétaire Intime',heb:'ו',img:'https://static.wixstatic.com/media/73e6ef_fe80ac35ad994b9c860f53b1e20c7e13~mv2.jpeg'},
+    {deg:'7°',nom:'Prévôt et Juge',heb:'ז',img:'https://static.wixstatic.com/media/73e6ef_d1b7a944a9f04e7ab48c34d1ce69b6e5~mv2.jpeg'},
+    {deg:'8°',nom:'Intendant des Bâtiments',heb:'ח',img:'https://static.wixstatic.com/media/73e6ef_71d91d0d7edd4d0a93b1c7561c265095~mv2.jpeg'},
+    {deg:'9°',nom:'Maître Élu des Neuf',heb:'ט',img:'https://static.wixstatic.com/media/73e6ef_66ade7b0e87743ac9be6a5c5de985bea~mv2.jpeg'},
+    {deg:'10°',nom:'Illustre Élu des Quinze',heb:'י',img:'https://static.wixstatic.com/media/73e6ef_9db04c77b5d84f8db7eae7a26c25fb85~mv2.jpeg'},
+    {deg:'11°',nom:'Élu Sublime des Douze',heb:'כ',img:'https://static.wixstatic.com/media/73e6ef_1aa7af553dc84acb91e1e3a0e56d98e4~mv2.jpeg'},
+    {deg:'12°',nom:'Grand Maître Architecte',heb:'ל',img:'https://static.wixstatic.com/media/73e6ef_ab4e1fee44c74e56acf2c88b12e5a21d~mv2.jpeg'},
+    {deg:'13°',nom:'Royal Arche',heb:'מ',img:'https://static.wixstatic.com/media/73e6ef_3dd3f8ef93074c369db979aff1a84cec~mv2.jpeg'},
+    {deg:'14°',nom:'Grand Élu Parfait',heb:'נ',img:'https://static.wixstatic.com/media/73e6ef_d19e7bae58904e7b888b2dd4b3e19867~mv2.jpeg'},
+    {deg:'15°',nom:"Chevalier d'Orient",heb:'ס',img:'https://static.wixstatic.com/media/73e6ef_6124db5289c0490fa68f38fbed897e8c~mv2.jpeg'},
+    {deg:'16°',nom:'Prince de Jérusalem',heb:'ע',img:'https://static.wixstatic.com/media/73e6ef_0d7e97c064424d85aa8df8b9f5cdb5b4~mv2.jpeg'},
+    {deg:'17°',nom:"Chevalier d'Orient et d'Occident",heb:'פ',img:'https://static.wixstatic.com/media/73e6ef_8b3c6a31e3f04f5da0b6a8aedf0ec27d~mv2.jpeg'},
+    {deg:'18°',nom:'Chevalier Rose-Croix',heb:'צ',img:'https://static.wixstatic.com/media/73e6ef_99dcd8cc30184b22aef3b4c22d40bfb2~mv2.jpeg'},
+    {deg:'19°',nom:'Grand Pontife',heb:'ק',img:'https://static.wixstatic.com/media/73e6ef_ff5a9bc6be2b4ffdb6e48b6a6ec5e0f5~mv2.jpeg'},
+    {deg:'20°',nom:'Vénérable Grand Maître',heb:'ר',img:'https://static.wixstatic.com/media/73e6ef_ce0e8d9a35f04ccb90b9fb84af6db69b~mv2.jpeg'},
+    {deg:'21°',nom:'Noachite',heb:'ש',img:'https://static.wixstatic.com/media/73e6ef_25a5e2e7cd1f4c6da04a74e2f6a3b23d~mv2.jpeg'},
+    {deg:'22°',nom:'Chevalier Royal Axe',heb:'ת',img:'https://static.wixstatic.com/media/73e6ef_3ba0a5b8e7c04e1b9fa14fe7a68c94b8~mv2.jpeg'},
+    {deg:'23°',nom:'Chef du Tabernacle',heb:'א',img:'https://static.wixstatic.com/media/73e6ef_bb1ef69c28d44a149eb8f49b3a0a5ec3~mv2.jpeg'},
+    {deg:'24°',nom:'Prince du Tabernacle',heb:'ב',img:'https://static.wixstatic.com/media/73e6ef_1bb29c1d0ae04e129e38bc8c8e5ca4d1~mv2.jpeg'},
+    {deg:'25°',nom:"Chevalier du Serpent d'Airain",heb:'ג',img:'https://static.wixstatic.com/media/73e6ef_cf22e7acecf04a2abac6095f9be3ca40~mv2.jpeg'},
+    {deg:'26°',nom:'Prince de Merci',heb:'ד',img:'https://static.wixstatic.com/media/73e6ef_3f0f8d8d67a44b689e8cfdbfe6a84ea7~mv2.jpeg'},
+    {deg:'27°',nom:'Souverain Commandeur du Temple',heb:'ה',img:'https://static.wixstatic.com/media/73e6ef_71e3b3c8ca6b4dc88c3d5f1e0a94c7b4~mv2.jpeg'},
+    {deg:'28°',nom:'Chevalier du Soleil',heb:'ו',img:'https://static.wixstatic.com/media/73e6ef_43b7a9c6b32b4a8c8c8c8c8c8c8c8c8c~mv2.jpeg'},
+    {deg:'29°',nom:'Chevalier de Saint-André',heb:'ז',img:'https://static.wixstatic.com/media/73e6ef_9c9c9c9c9c9c4a8c8c8c8c8c8c8c8c8c~mv2.jpeg'},
+    {deg:'30°',nom:'Grand Élu Kadosh',heb:'ח',img:'https://static.wixstatic.com/media/73e6ef_3a3a3a3a3a3a4a8c8c8c8c8c8c8c8c8c~mv2.jpeg'},
+    {deg:'31°',nom:'Grand Inspecteur Inquisiteur',heb:'ט',img:'https://static.wixstatic.com/media/73e6ef_5b5b5b5b5b5b4a8c8c8c8c8c8c8c8c8c~mv2.jpeg'},
+    {deg:'32°',nom:'Sublime Prince du Royal Secret',heb:'י',img:'https://static.wixstatic.com/media/73e6ef_7c7c7c7c7c7c4a8c8c8c8c8c8c8c8c8c~mv2.jpeg'},
+    {deg:'33°',nom:'Souverain Grand Inspecteur',heb:'כ',img:'https://static.wixstatic.com/media/73e6ef_05fa6d65f2f144229c0e581ab7d13873~mv2.jpeg',special:true}
+  ];
+  const gallery=document.getElementById('sautoir-gallery');
+  if(!gallery)return;
+  const lbArr=data.map(d=>({src:d.img,cap:`${d.deg} — ${d.nom} (${d.heb})`}));
+  gallery.innerHTML=data.map((d,i)=>`
+    <div class="si${d.special?' sp':''}" onclick="openSautoir(${i})">
+      <img src="${d.img}" alt="${d.deg}" loading="lazy" onerror="this.style.display='none'">
+      <div class="si-lbl">${d.deg}</div>
+      <div class="si-sub">${d.heb} — ${d.nom.length>18?d.nom.substring(0,18)+'…':d.nom}</div>
+    </div>`).join('');
+  window._sautoirs=lbArr;
+}
+function openSautoir(i){
+  lbImgs=window._sautoirs||[];lbIdx=i;
+  if(!lbImgs[i])return;
+  document.getElementById('lb-img').src=lbImgs[i].src;
+  document.getElementById('lb-cap').textContent=lbImgs[i].cap;
+  document.getElementById('lb').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+
+// ═══════════════════ TRAITÉS ═══════════════════
+const TRAITES=[
+  {
+    id:'fmigs',pays:'France 🇫🇷',sigle:'FMIGS',
+    nom:'Fédération Maçonnique Internationale des Grandes Loges et Suprêmes Conseils',
+    sgc:'T∴I∴F∴ Joseph SERCIA, Souverain Grand Commandeur 33°',
+    date:'2026',type:'traite',
+    desc:"Obédience internationale présidée par le T∴I∴F∴ Joseph SERCIA, SGC 33°. Site : fmigs.info. Traité de reconnaissance mutuelle et d'amitié fraternelle.",
+    flag:'🇫🇷',cx:469,cy:113
+  },
+  {
+    id:'kilwinning',pays:'France / Tradition Écossaise 🏴󠁧󠁢󠁳󠁣󠁴󠁿',sigle:'Kilwinning',
+    nom:'Mère-Loge du Rite Primitif & Traditionnel de Kilwinning',
+    sgc:'T∴I∴P∴G∴M∴ Joël PRATS',
+    date:'21 février 2026',type:'traite',
+    desc:"Premier traité signé par le Rite Brith Israël. Traité d'Amitié et de Reconnaissance Mutuelle, incluant intervisitation réciproque et travaux de courtoisie. Document historique fondateur.",
+    flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',cx:449,cy:88
+  },
+  {
+    id:'imu',pays:'France 🇫🇷',sigle:'IMU',
+    nom:'Internationale Maçonnique Universelle',
+    sgc:'',date:'2026',type:'traite',
+    desc:"Obédience internationale à vocation universelle, partenaire du Rite Brith Israël dans le cadre du développement mondial de la fraternité maçonnique.",
+    flag:'🌍',cx:480,cy:120
+  },
+  {
+    id:'belgique',pays:'Belgique 🇧🇪',sigle:'GL Belgique',
+    nom:'Grande Loge de Belgique — Partenaire',
+    sgc:'',date:'2026',type:'traite',
+    desc:"Relation fraternelle et accord de reconnaissance mutuelle avec la communauté maçonnique belge.",
+    flag:'🇧🇪',cx:468,cy:98
+  },
+  {
+    id:'suisse',pays:'Suisse 🇨🇭',sigle:'Suisse',
+    nom:'Obédience Suisse Partenaire',
+    sgc:'',date:'2026',type:'traite',
+    desc:"Accord de fraternité et de reconnaissance avec une obédience helvétique.",
+    flag:'🇨🇭',cx:477,cy:108
+  },
+  {
+    id:'italie',pays:'Italie 🇮🇹',sigle:'GLI',
+    nom:"Grande Loggia d'Italia — Partenaire",
+    sgc:'',date:'2026',type:'traite',
+    desc:"Traité de reconnaissance mutuelle avec la maçonnerie italienne.",
+    flag:'🇮🇹',cx:491,cy:123
+  },
+  {
+    id:'espagne',pays:'Espagne 🇪🇸',sigle:'GL España',
+    nom:'Gran Logia de España — Partenaire',
+    sgc:'',date:'2026',type:'traite',
+    desc:"Accord fraternel et de reconnaissance avec la grande loge espagnole partenaire.",
+    flag:'🇪🇸',cx:457,cy:133
+  },
+  {
+    id:'maroc',pays:'Maroc 🇲🇦',sigle:'Maroc',
+    nom:'Obédience Maçonnique Marocaine Partenaire',
+    sgc:'',date:'2026',type:'traite',
+    desc:"Accord de fraternité et d'amitié avec la maçonnerie marocaine.",
+    flag:'🇲🇦',cx:454,cy:160
+  },
+  {
+    id:'israel',pays:'Israël 🇮🇱',sigle:'GL Israël',
+    nom:"Grande Loge de l'État d'Israël — Accord en cours",
+    sgc:'',date:'2026',type:'accord',
+    desc:"Accord de reconnaissance en cours de négociation avec la maçonnerie israélienne. Lien naturel avec la tradition hébraïque fondatrice du Rite Brith Israël — dont le nom même honore la terre d'Israël.",
+    flag:'🇮🇱',cx:547,cy:143
+  },
+  {
+    id:'canada',pays:'Canada 🇨🇦',sigle:'Canada',
+    nom:'Grande Loge du Canada — Partenaire',
+    sgc:'',date:'2026',type:'traite',
+    desc:"Relation fraternelle établie avec la communauté maçonnique canadienne francophone.",
+    flag:'🇨🇦',cx:174,cy:93
+  },
+  {
+    id:'australie',pays:'Australie 🇦🇺',sigle:'Australie',
+    nom:'Grand Lodge of Australia — Partenaire',
+    sgc:'',date:'2026',type:'traite',
+    desc:"Accord de fraternité et de reconnaissance avec la maçonnerie australienne.",
+    flag:'🇦🇺',cx:802,cy:308
+  }
+];
+
+function buildTraites(){
+  // Mise à jour compteur
+  const signedCount=TRAITES.filter(t=>t.type==='traite').length;
+  document.getElementById('traite-count').textContent=signedCount;
+
+  // Construire cards
+  const grid=document.getElementById('traites-grid');
+  if(!grid)return;
+  grid.innerHTML=TRAITES.map(t=>`
+    <div class="t-card${t.type==='accord'?' pending':''}" onclick="${t.type==='traite'?`showTraiteDetail('${t.id}')`:''}" style="cursor:${t.type==='traite'?'pointer':'default'}">
+      <div class="t-card-img">
+        <div class="t-card-flag">${t.flag}</div>
+        <div class="t-card-badge${t.type==='accord'?' pending':''}">${t.type==='accord'?'EN COURS':'SIGNÉ'}</div>
+      </div>
+      <div class="t-card-body">
+        <div class="t-card-sigle">${t.sigle}</div>
+        <div class="t-card-name">${t.nom}</div>
+        <div class="t-card-desc">${t.pays}</div>
+        ${t.sgc?`<div class="t-card-sgc">${t.sgc}</div>`:''}
+        <div class="t-card-date">📅 ${t.date}</div>
+      </div>
+    </div>`).join('');
+
+  // Tooltips carte
+  document.querySelectorAll('#pane-traites .map-pin').forEach(pin=>{
+    const id=pin.dataset.id;
+    const t=TRAITES.find(x=>x.id===id);
+    if(!t)return;
+    pin.addEventListener('mouseenter',function(e){
+      const tt=document.getElementById('map-tooltip');
+      document.getElementById('tt-title').textContent=t.nom.length>52?t.nom.substring(0,52)+'…':t.nom;
+      document.getElementById('tt-pays').textContent=t.pays;
+      tt.style.display='block';
+      posTooltip(e,tt);
+    });
+    pin.addEventListener('mousemove',function(e){posTooltip(e,document.getElementById('map-tooltip'));});
+    pin.addEventListener('mouseleave',function(){document.getElementById('map-tooltip').style.display='none';});
+  });
+}
+
+function posTooltip(e,tt){
+  const ctr=document.getElementById('pane-traites').querySelector('.map-wrap');
+  const rect=ctr.getBoundingClientRect();
+  let x=e.clientX-rect.left+13;
+  let y=e.clientY-rect.top-44;
+  if(x+205>rect.width)x=e.clientX-rect.left-200;
+  if(y<0)y=e.clientY-rect.top+12;
+  tt.style.left=x+'px';tt.style.top=y+'px';
+}
+
+window.showTraiteDetail=function(id){
+  const t=TRAITES.find(x=>x.id===id);
+  if(!t)return;
+  const badge=document.getElementById('td-badge');
+  badge.textContent=t.type==='accord'?'EN COURS':'SIGNÉ';
+  badge.style.background=t.type==='accord'?'#3355aa':'var(--gold)';
+  badge.style.color=t.type==='accord'?'#fff':'var(--midnight)';
+  document.getElementById('td-nom').textContent=t.nom;
+  document.getElementById('td-pays').textContent=t.pays;
+  document.getElementById('td-desc').textContent=t.desc;
+  document.getElementById('td-date').textContent='📅 '+t.date;
+  document.getElementById('td-sgc').textContent=t.sgc?'— '+t.sgc:'';
+  const d=document.getElementById('traite-detail');
+  d.classList.add('show');
+  setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+};
+
+// ═══════════════════ TUILAGE ═══════════════════
+const REPONSES={
+  age:['trois ans','3 ans','trois','3'],
+  lieu:['de la loge','de l\'orient','de l\'atelier','du temple'],
+  action:['chercher','travailler','m\'instruire','progresser','apprendre','quérir']
+};
+function checkTuilage(e,type){
+  e.preventDefault();
+  const pre=type==='loge'?'l':'f';
+  const a1=document.getElementById('q'+pre+'1').value.toLowerCase().trim();
+  const a2=document.getElementById('q'+pre+'2').value.toLowerCase().trim();
+  const a3=document.getElementById('q'+pre+'3').value.toLowerCase().trim();
+  const ok=REPONSES.age.some(r=>a1.includes(r))&&REPONSES.lieu.some(r=>a2.includes(r))&&REPONSES.action.some(r=>a3.includes(r));
+  const errEl=document.getElementById('terr-'+type);
+  if(ok){
+    document.getElementById(type==='loge'?'loge-locked':'fm-locked').style.display='none';
+    document.getElementById(type==='loge'?'loge-unlocked':'fm-unlocked').classList.add('show');
+    errEl.classList.remove('show');
+    localStorage.setItem('tuilage_'+type,'1');
+  }else{errEl.classList.add('show');}
+  return false;
+}
+function restoreTuilage(){
+  ['loge','fm'].forEach(t=>{
+    if(localStorage.getItem('tuilage_'+t)==='1'){
+      const locked=document.getElementById(t==='loge'?'loge-locked':'fm-locked');
+      const unlocked=document.getElementById(t==='loge'?'loge-unlocked':'fm-unlocked');
+      if(locked)locked.style.display='none';
+      if(unlocked)unlocked.classList.add('show');
+    }
+  });
+}
+
+// ═══════════════════ LANGUE ═══════════════════
+function setLang(l){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  const btn=document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`);
+  if(btn)btn.classList.add('active');
+  localStorage.setItem('rbi_lang',l);
+}
+
+// ═══════════════════ CLAVIER ═══════════════════
+document.addEventListener('keydown',e=>{
+  if(e.target.tagName==='INPUT')return;
+  const tabs=['accueil','presentation','valeurs','commandeur','supreme-conseil','degres','comparatif','symboles','decors','sources','traites','publications','ouvrir-loge','devenir-fm','espace-fm','contact'];
+  const cur=document.querySelector('.nav-item.active');
+  if(!cur)return;
+  const idx=tabs.indexOf(cur.dataset.tab);
+  if(e.key==='ArrowDown'&&idx<tabs.length-1){e.preventDefault();showTab(tabs[idx+1]);}
+  if(e.key==='ArrowUp'&&idx>0){e.preventDefault();showTab(tabs[idx-1]);}
+});
+</script>
+</body>
+</html>
